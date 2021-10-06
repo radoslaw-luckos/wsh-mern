@@ -1,10 +1,24 @@
-import React from 'react'
+import React from "react";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route
+} from "react-router-dom";
+import AdminPanel from './pages/AdminPanel/AdminPanel';
+import Home from "./pages/LandingPage/Home";
 
 const App = () => {
     return (
-        <div>
-            <h1>App</h1>
-        </div>
+        <Router>
+            <Switch>
+                <Route path='/admin'>
+                    <AdminPanel />
+                </Route>
+                <Route path='/'>
+                    <Home />
+                </Route>
+            </Switch>
+        </Router>
     )
 }
 
