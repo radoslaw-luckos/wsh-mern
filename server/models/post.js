@@ -1,13 +1,19 @@
 import mongoose from 'mongoose';
 
 const postSchema = mongoose.Schema({
-    title: String,
+    title: {
+        type: String,
+    },
+    desc: {
+        type: String,
+    },
+    tag: {
+        type: String,
+    },
     date: {
         type: Date,
-        default: new Date()
-    },
-    desc: String,
-    tag: String
+        default: Date.now
+    }
 })
 
 const Post = mongoose.model('Post', postSchema);

@@ -1,21 +1,19 @@
-//needed stuff import
+//needed imports
 import express from 'express';
-import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
-import cors from 'cors';
-
-//routes import
-import postsRoutes from './routes/posts.js';
 
 //express server
 const app = express();
 
+app.use(express.json());
+
+//routes import
+import postsRoutes from './routes/posts.js';
+
 app.use('/posts', postsRoutes);
-app.use(bodyParser.json());
-app.use(cors());
 
 //global variables
-const CONNECTION_URL = 'mongodb+srv://Radek:qwe456rty@cluster0.7vlwu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const CONNECTION_URL = 'mongodb+srv://Radek:qwe456rty@cluster0.7vlwu.mongodb.net/32wshDatabase?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 5000;
 
 //mongoDB connection
