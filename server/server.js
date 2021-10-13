@@ -8,9 +8,11 @@ const app = express();
 app.use(express.json());
 
 //routes import
-import postsRoutes from './routes/posts.js';
+import storiesRoutes from './routes/stories.js';
+import adsRoutes from './routes/ads.js';
 
-app.use('/posts', postsRoutes);
+app.use('/stories', storiesRoutes);
+app.use('/ads', adsRoutes);
 
 //global variables
 const CONNECTION_URL = 'mongodb+srv://Radek:qwe456rty@cluster0.7vlwu.mongodb.net/32wshDatabase?retryWrites=true&w=majority';
