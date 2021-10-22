@@ -3,7 +3,6 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 
-
 //express server
 const app = express();
 
@@ -19,9 +18,10 @@ import storiesRoutes from './routes/stories.js';
 import adsRoutes from './routes/ads.js';
 import usersRoutes from './routes/users.js';
 
-app.use('api/stories', storiesRoutes);
-app.use('api/ads', adsRoutes);
-app.use('api/users', usersRoutes);
+//routes middlewares
+app.use('/api/stories', storiesRoutes);
+app.use('/api/ads', adsRoutes);
+app.use('/api/users', usersRoutes);
 
 //global variables
 const CONNECTION_URL = 'mongodb+srv://Radek:qwe456rty@cluster0.7vlwu.mongodb.net/32wshDatabase?retryWrites=true&w=majority';

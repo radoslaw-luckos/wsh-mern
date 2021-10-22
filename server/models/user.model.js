@@ -22,12 +22,6 @@ const userSchema = mongoose.Schema({
     phone: {
         type: Number,
     },
-    roles: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Role'
-        }
-    ]
 })
 
 const User = mongoose.model('User', userSchema);

@@ -1,4 +1,7 @@
 import user from '../models/user.model.js';
+import bcrypt from 'bcryptjs';
+import { validateLogin, validateRegister } from '../utils/validation.js';
+import jwt from 'jsonwebtoken';
 
 // gets all the users
 export const getUsers = async (req, res) => {
@@ -39,13 +42,48 @@ export const updateUser = async (req, res) => {
         res.status(400).json({ message: err.message });
     }
 }
-//submits a user
-export const createUser = async (req, res) => {
-    try {
-        const newUser = new user(req.body);
-        await newUser.save();
-        res.status(201).json(newUser);
-    } catch (err) {
-        res.status(400).json({ message: err.message });
-    }
+//registers new user
+export const registerUser = async (req, res) => {
+
+    const { error } = validateRegister(req.body);
+    if (error) return res.status(400).json(error.details[0].message);
+
+    const emailExists = await user.findOne({ email: req.body.email });
+    if (emailExists) return res.status(400).json('Email already exists in the database!');
+
+    const newUser = new user({
+        name: req.body.name,
+        lastname: req.body.lastname,
+        email: req.body.email,
+        password: req.body.password,
+        unit: req.body.unit,
+        functions: req.body.functions,
+        phone: req.body.phone
+    });
+
+    bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(newUser.password, salt, (err, hash) => {
+            newUser.password = hash;
+            newUser.save()
+                .then(user => res.status(201).json(user))
+                .catch(err => console.log(err))
+        });
+    });
+}
+//login user
+export const loginUser = async (req, res) => {
+
+    const { error } = validateLogin(req.body);
+    if (error) return res.status(400).json(error.details[0].message);
+
+    const userToCheck = await user.findOne({ email: req.body.email });
+    if (!userToCheck) return res.status(400).json('Email is not found!');
+
+
+    const validPassword = await bcrypt.compare(req.body.password, userToCheck.password);
+    console.log(validPassword);
+
+    if (!validPassword) return res.status(400).json('Invalid password!');
+
+    res.json('Logged in');
 }
