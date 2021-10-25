@@ -2,6 +2,7 @@ import user from '../models/user.model.js';
 import bcrypt from 'bcryptjs';
 import { validateLogin, validateRegister } from '../utils/validation.js';
 import jwt from 'jsonwebtoken';
+import { TOKEN_SECRET } from '../utils/globalVariables.js';
 
 // gets all the users
 export const getUsers = async (req, res) => {
@@ -85,5 +86,7 @@ export const loginUser = async (req, res) => {
 
     if (!validPassword) return res.status(400).json('Invalid password!');
 
-    res.json('Logged in');
+    const token = jwt.sign({ _id: userToCheck._id }, TOKEN_SECRET)
+    res.header('auth-token', token);
+    res.json(token)
 }

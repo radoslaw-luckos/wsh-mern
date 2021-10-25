@@ -2,6 +2,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import { PORT, CONNECTION_URL } from './utils/globalVariables.js'
 
 //express server
 const app = express();
@@ -23,9 +24,6 @@ app.use('/api/stories', storiesRoutes);
 app.use('/api/ads', adsRoutes);
 app.use('/api/users', usersRoutes);
 
-//global variables
-const CONNECTION_URL = 'mongodb+srv://Radek:qwe456rty@cluster0.7vlwu.mongodb.net/32wshDatabase?retryWrites=true&w=majority';
-const PORT = process.env.PORT || 5000;
 
 //mongoDB connection
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
