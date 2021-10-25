@@ -1,20 +1,27 @@
 import React from "react";
-import AdminPanel from "./pages/admin/Admin";
-import Home from "./pages/static/Home";
+import Admin from "./modules/admin/Admin";
+import Home from "./modules/static/Home";
+import Login from "./modules/identity/Login";
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 import './App.scss';
+
+const loggedIn = false;
 
 function App() {
   return (
     <div className="container">
       <Router>
         <Switch>
-          <Route path='/admin'>
-            <AdminPanel />
+          <Route exact path='/admin'>
+            {!loggedIn ? <Redirect to="/login" /> : <Admin />}
+          </Route>
+          <Route path='/login'>
+            <Login />
           </Route>
           <Route path=''>
             <Home />
