@@ -6,7 +6,6 @@ import Stories from './pages/Stories';
 import Users from './pages/Users';
 import Profile from './pages/Profile';
 import {
-    BrowserRouter as Router,
     Switch,
     Route,
     useRouteMatch,
@@ -24,22 +23,20 @@ const Admin = () => {
                 <Nav />
             </nav>
             <main className='admin-panel__content' >
-                <Router>
-                    <Switch>
-                        <Route path={`${path}/uzytkownicy`}>
-                            <Users />
-                        </Route>
-                        <Route path={`${path}/relacje`}>
-                            <Stories />
-                        </Route>
-                        <Route path={`${path}/ogloszenia`}>
-                            <Ads />
-                        </Route>
-                        <Route path={`${path}`}>
-                            <Profile />
-                        </Route>
-                    </Switch>
-                </Router>
+                <Switch>
+                    <Route path={`${path}/uzytkownicy`}>
+                        <Users />
+                    </Route>
+                    <Route path={`${path}/relacje`}>
+                        <Stories />
+                    </Route>
+                    <Route path={`${path}/ogloszenia`}>
+                        <Ads />
+                    </Route>
+                    <Route path={`${path}`}>
+                        <Profile />
+                    </Route>
+                </Switch>
             </main>
         </div>
     )

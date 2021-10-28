@@ -2,6 +2,7 @@ import React from 'react'
 import { Button } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { useRouteMatch } from 'react-router';
+import './Nav.scss';
 
 const Nav = () => {
 

@@ -15,8 +15,12 @@
     }
     &__menu{
         grid-area: nav;
+        background-color: lighten($bg-primary, $amount: 5);
     }
     &__content{
         grid-area: content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }

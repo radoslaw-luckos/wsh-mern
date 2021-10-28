@@ -1,2 +1,24 @@
 @import '../../../../assets/styles/colors';
 
+.menu{
+    height: 80%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    &__title{
+        font-size: 1.5rem;
+        padding: 16px 0;
+        width: 50%;
+        text-align: left;
+    }
+    &__items-list{
+        list-style-type: none;
+        width: 50%;
+        height: 80%;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+}
