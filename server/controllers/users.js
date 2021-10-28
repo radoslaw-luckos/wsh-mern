@@ -88,5 +88,11 @@ export const loginUser = async (req, res) => {
 
     const token = jwt.sign({ _id: userToCheck._id }, TOKEN_SECRET)
     res.header('auth-token', token);
-    res.json(token)
+
+    const response = {
+        token: token,
+        username: userToCheck.name,
+        userId: userToCheck._id
+    }
+    res.json(response)
 }

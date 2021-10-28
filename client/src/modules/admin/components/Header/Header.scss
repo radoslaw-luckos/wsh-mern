@@ -1,0 +1,12 @@
+@import '../../../../assets/styles/colors';
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 16px;
+    background-color: lighten($bg-primary, 10);
+    &__welcome{
+        font-size: 2rem;
+    }
+}
