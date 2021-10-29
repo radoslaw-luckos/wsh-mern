@@ -31,7 +31,7 @@ function App() {
               <Route path='/login'>
                 <Login />
               </Route>
-              <Route exact path='/glowna'>
+              <Route exact path='/'>
                 <Home />
               </Route>
             </Switch>

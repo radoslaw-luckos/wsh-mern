@@ -9,7 +9,7 @@ const Login = () => {
 
     let history = useHistory();
 
-    const { user, setUser } = useContext(UserContext);
+    const { setUser } = useContext(UserContext);
 
     const { register, handleSubmit } = useForm();
 

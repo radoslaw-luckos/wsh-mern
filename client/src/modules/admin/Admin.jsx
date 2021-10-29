@@ -3,7 +3,7 @@ import Header from './components/Header/Header';
 import Nav from './components/Nav/Nav';
 import Ads from './pages/Ads';
 import Stories from './pages/Stories';
-import Users from './pages/Users';
+import Users from './pages/Users/Users';
 import Profile from './pages/Profile';
 import {
     Switch,
