@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import { useForm } from "react-hook-form";
-import { Button, FormControl, Input, FormLabel, Flex, Heading } from "@chakra-ui/react";
 import { UserContext } from '../../context/userContext';
 import { useHistory } from "react-router-dom";
-
+import { TextField, Button, Typography } from '@mui/material'
+import { Box } from '@mui/system';
+import './Login.scss';
 
 const Login = () => {
 
@@ -46,24 +47,25 @@ const Login = () => {
 
     return (
         /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
-        <Flex direction='column' background='blue.600' p={12} rounded={6}>
-            <form onSubmit={handleSubmit(onSubmit)}>
+        <Box sx={{
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: 'white'
+        }} className='container'>
+            <form onSubmit={handleSubmit(onSubmit)} className='form'>
+                <Typography sx={{ m: 2 }}>Zaloguj się </Typography>
 
-                <Heading mb={6}>Zaloguj się</Heading>
+                <TextField required id="outlined-required" label="Adres email" type='email' defaultValue="jan.kowalski@zhp.net.pl" {...register("email", { required: true })} sx={{ m: 2 }} />
 
-                <FormControl id="email" colorScheme='blue' isRequired mb={4}>
-                    <FormLabel htmlFor="email" >Adres email</FormLabel>
-                    <Input variant="filled" placeholder='jan.kowalski@zhp.net.pl ' type="email"  {...register("email", { required: true })} />
-                </FormControl>
+                <TextField required id="outlined-required" label="Hasło" type='password' defaultValue="*********" {...register("password", { required: true })} sx={{ m: 2 }} />
 
-                <FormControl id="password" colorScheme='blue' isRequired mb={4}>
-                    <FormLabel htmlFor="password">Hasło</FormLabel>
-                    <Input variant="filled" placeholder='*******' type="password"  {...register("password", { required: true })} />
-                </FormControl>
-
-                <Button colorScheme='blue' type='submit'> Zaloguj się </Button>
+                <Button variant='contained' type='submit'> Zaloguj się </Button>
             </form>
-        </Flex>
+        </Box>
 
     );
 }

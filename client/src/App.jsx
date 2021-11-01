@@ -9,7 +9,6 @@ import {
   Redirect
 } from "react-router-dom";
 import './App.scss';
-import { ChakraProvider } from "@chakra-ui/react";
 import { UserContext } from './context/userContext'
 
 
@@ -20,25 +19,23 @@ function App() {
   const value = useMemo(() => ({ user, setUser }), [user, setUser]);
 
   return (
-    <ChakraProvider>
-      <UserContext.Provider value={value}>
-        <div className="container">
-          <Router>
-            <Switch>
-              <Route path='/admin'>
-                {!user ? <Redirect to="/login" /> : <Admin />}
-              </Route>
-              <Route path='/login'>
-                <Login />
-              </Route>
-              <Route exact path='/'>
-                <Home />
-              </Route>
-            </Switch>
-          </Router>
-        </div>
-      </UserContext.Provider>
-    </ChakraProvider>
+    <UserContext.Provider value={value}>
+      <div className="container">
+        <Router>
+          <Switch>
+            <Route path='/admin'>
+              {!user ? <Redirect to="/login" /> : <Admin />}
+            </Route>
+            <Route path='/login'>
+              <Login />
+            </Route>
+            <Route exact path='/'>
+              <Home />
+            </Route>
+          </Switch>
+        </Router>
+      </div>
+    </UserContext.Provider>
   );
 }
 

@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import { FiLogOut } from 'react-icons/fi';
-import { IconButton } from '@chakra-ui/react';
 import './Header.scss';
 import { UserContext } from '../../../../context/userContext';
 import { useHistory } from 'react-router';
+import { IconButton } from '@mui/material';
 
 const Header = () => {
 

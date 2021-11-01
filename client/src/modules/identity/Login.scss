@@ -1,0 +1,16 @@
+@import '../../assets/styles/colors';
+.container{
+    background-image: url('../../assets/img/login-bg.jpg') !important;
+    background-position: center;
+    background-size: cover;
+}
+.form{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    background-color: $bg-primary;
+    opacity: .9;
+    padding: 32px;
+    border-radius: 16px;
+}
