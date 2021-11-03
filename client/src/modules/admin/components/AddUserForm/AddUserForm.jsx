@@ -1,15 +1,11 @@
 import React from 'react';
 import { Typography, TextField, Button, Box } from '@mui/material';
 import { useForm } from 'react-hook-form';
-import './AddUserForm.scss'
+import './AddUserForm.scss';
 
-const AddUserForm = () => {
+const AddUserForm = ({ addUser }) => {
 
     const { register, handleSubmit } = useForm();
-
-    const addUser = (data) => {
-        console.log(data);
-    }
 
     return (
 
