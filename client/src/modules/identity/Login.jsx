@@ -55,13 +55,13 @@ const Login = () => {
             alignItems: 'center',
             justifyContent: 'center',
             color: 'white'
-        }} className='container'>
-            <form onSubmit={handleSubmit(onSubmit)} className='form'>
+        }} className='login-container'>
+            <form onSubmit={handleSubmit(onSubmit)} className='form' noValidate>
                 <Typography sx={{ m: 2 }}>Zaloguj się </Typography>
 
-                <TextField required id="outlined-required" label="Adres email" type='email' defaultValue="jan.kowalski@zhp.net.pl" {...register("email", { required: true })} sx={{ m: 2 }} />
+                <TextField required id="outlined-required" label="Adres email" type='email' placeholder="jan.kowalski@zhp.net.pl" {...register("email", { required: true })} sx={{ m: 2 }} />
 
-                <TextField required id="outlined-required" label="Hasło" type='password' defaultValue="*********" {...register("password", { required: true })} sx={{ m: 2 }} />
+                <TextField required id="outlined-required" label="Hasło" type='password' placeholder="*********" {...register("password", { required: true })} sx={{ m: 2 }} />
 
                 <Button variant='contained' type='submit'> Zaloguj się </Button>
             </form>
