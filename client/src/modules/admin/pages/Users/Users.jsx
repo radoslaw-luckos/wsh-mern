@@ -91,7 +91,6 @@ const Users = () => {
             return;
         }
         const userToDelete = usersData.find(user => user.email === email)
-        console.log(userToDelete.id);
         const requestOptions = {
             method: 'DELETE',
             headers: {
@@ -136,7 +135,7 @@ const Users = () => {
         }
         getUsers();
         setIsLoading(false);
-    }, []);
+    }, [usersData]);
 
     if (isLoading) {
         return (
