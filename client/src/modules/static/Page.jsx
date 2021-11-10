@@ -1,7 +1,7 @@
 import React from 'react';
-import { Switch, Route, useRouteMatch } from 'react-router-dom';
 import Nav from './components/Nav/Nav';
 import Footer from './components/Footer/Footer';
+import { Switch, Route, useRouteMatch } from 'react-router-dom';
 import Contact from './pages/Contact/Contact';
 import Info from './pages/Info/Info';
 import About from './pages/About/About';
@@ -20,16 +20,16 @@ const Page = () => {
                     <Route path={`${path}/kontakt`}>
                         <Contact />
                     </Route>
-                    <Route path={`${path}/dla-rodzicow`}>
+                    <Route path={`dla-rodzicow`}>
                         <Info />
                     </Route>
-                    <Route path={`${path}/o-nas`}>
+                    <Route path={`/o-nas`}>
                         <About />
                     </Route>
-                    <Route path={`${path}/galeria`}>
+                    <Route path={`/galeria`}>
                         <Gallery />
                     </Route>
-                    <Route path={`${path}`}>
+                    <Route path={`/`}>
                         <Home />
                     </Route>
                 </Switch>
