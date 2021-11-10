@@ -7,20 +7,22 @@ import Info from './pages/Info/Info';
 import About from './pages/About/About';
 import Gallery from './pages/Gallery/Gallery';
 import Home from './pages/Home/Home';
+import './Page.scss'
 
 const Page = () => {
 
     const { path } = useRouteMatch();
 
     return (
-        <div>
+        <div className='wrapper'>
+            <div className="overlay"></div>
             <Nav />
             <main className="content">
                 <Switch>
-                    <Route path={`${path}/kontakt`}>
+                    <Route path={`/kontakt`}>
                         <Contact />
                     </Route>
-                    <Route path={`dla-rodzicow`}>
+                    <Route path={`/dla-rodzicow`}>
                         <Info />
                     </Route>
                     <Route path={`/o-nas`}>
@@ -33,8 +35,9 @@ const Page = () => {
                         <Home />
                     </Route>
                 </Switch>
+                <Footer />
             </main>
-            <Footer />
+
         </div>
     );
 };
