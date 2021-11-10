@@ -1,8 +1,8 @@
 import React from 'react';
 import Header from './components/Header/Header';
 import Nav from './components/Nav/Nav';
-import Ads from './pages/Ads';
-import Stories from './pages/Stories';
+import Ads from './pages/Ads/Ads';
+import Stories from './pages/Stories/Stories';
 import Users from './pages/Users/Users';
 import Profile from './pages/Profile';
 import {

@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from "react";
 import Admin from "./modules/admin/Admin";
-import Home from "./modules/static/Home";
 import Login from "./modules/identity/Login";
+import Page from "./modules/static/Page";
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,7 +12,7 @@ import './App.scss';
 import { UserContext } from './context/userContext'
 
 
-function App() {
+const App = () => {
 
   const [user, setUser] = useState(null);
 
@@ -30,7 +30,7 @@ function App() {
               <Login />
             </Route>
             <Route exact path='/'>
-              <Home />
+              <Page />
             </Route>
           </Switch>
         </Router>
