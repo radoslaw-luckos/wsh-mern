@@ -135,7 +135,7 @@ const Users = () => {
         }
         getUsers();
         setIsLoading(false);
-    }, [usersData]);
+    }, []);
 
     if (isLoading) {
         return (

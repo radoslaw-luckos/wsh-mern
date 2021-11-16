@@ -35,9 +35,8 @@ const Page = () => {
                         <Home />
                     </Route>
                 </Switch>
-                <Footer />
             </main>
-
+            <Footer />
         </div>
     );
 };

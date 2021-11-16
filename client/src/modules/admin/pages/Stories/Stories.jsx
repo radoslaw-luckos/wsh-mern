@@ -32,7 +32,6 @@ const Stories = () => {
     const [StoriesData, setStoriesData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-
     //function fetches data from api and returns it
     const fetchStories = async () => {
 
@@ -70,7 +69,7 @@ const Stories = () => {
             },
         };
 
-        //Zapytanie do API - rejestracja użytkownika 
+        //API call to register new user
         const response = await fetch('http://localhost:5000/api/stories', requestOptions);
         if (response.ok) {
             setStoriesData([...StoriesData, data]);
@@ -81,11 +80,7 @@ const Stories = () => {
 
     const deleteStory = async (id) => {
 
-        console.log(id);
-
-        const StoryToDelete = StoriesData.find(story => story.id === id)
-
-        console.log(StoryToDelete);
+        const StoryToDelete = StoriesData.find(story => story.id === id);
 
         const requestOptions = {
             method: 'DELETE',
@@ -97,14 +92,13 @@ const Stories = () => {
         const response = await fetch(`http://localhost:5000/api/stories/delete/${StoryToDelete.id}`, requestOptions);
 
         if (response.ok) {
-            console.log(response);
             const newStoriesData = StoriesData.filter(story => story._id !== id);
             setStoriesData(newStoriesData);
         }
     }
 
     const openAddUserForm = () => {
-        // zmienia stan komponentu z formularzem dodawania użytkownika na otwarty 
+        // changes the form state 
         setFormOpened(!FormOpened);
     }
 
@@ -126,7 +120,7 @@ const Stories = () => {
         }
         getStories();
         setIsLoading(false);
-    }, [StoriesData]);
+    }, []);
 
     if (isLoading) {
         return (

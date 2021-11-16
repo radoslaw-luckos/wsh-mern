@@ -129,7 +129,7 @@ const Ads = () => {
         }
         getAds();
         setIsLoading(false);
-    }, [AdsData]);
+    }, []);
 
     if (isLoading) {
         return (
