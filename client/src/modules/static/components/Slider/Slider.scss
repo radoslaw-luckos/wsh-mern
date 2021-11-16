@@ -1,0 +1,12 @@
+@import '../../../../assets/styles/colors';
+
+.slider{
+    margin: auto;
+    margin-top: 20px;
+    width: 90%;
+    height: 60vh;
+    background-color: $bg-primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

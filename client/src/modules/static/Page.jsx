@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from './components/Nav/Nav';
 import Footer from './components/Footer/Footer';
-import { Switch, Route, useRouteMatch } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Contact from './pages/Contact/Contact';
 import Info from './pages/Info/Info';
 import About from './pages/About/About';
@@ -10,8 +10,6 @@ import Home from './pages/Home/Home';
 import './Page.scss'
 
 const Page = () => {
-
-    const { path } = useRouteMatch();
 
     return (
         <div className='wrapper'>

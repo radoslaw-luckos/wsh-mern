@@ -1,9 +1,14 @@
-import React from 'react'
+import React from 'react';
+import SliderComponent from '../../components/Slider/Slider';
+import StoriesComponent from '../../components/Stories/Stories';
+import AdsComponent from '../../components/Ads/Ads';
 
 const Home = () => {
     return (
         <section>
-            Home works!
+            <SliderComponent />
+            <StoriesComponent />
+            <AdsComponent />
         </section>
     )
 }
