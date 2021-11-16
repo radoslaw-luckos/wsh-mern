@@ -1,9 +1,9 @@
 .wrapper{
     width: 100%;
     height: 100%;
-    background-image: url('../../assets/img/bg.jpg');
+    background-image: url('../../assets/img/bg2.jpg');
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: bottom;
     background-size: cover;
 }
 .content{
@@ -15,7 +15,6 @@
     height: calc(100% - 12rem);
     overflow-y: auto;
     z-index: 1;
-    background-color: #071f4bd3;
 }
 // // Small devices (landscape phones, 576px and up)
 // @media (min-width: 576px) { ... }

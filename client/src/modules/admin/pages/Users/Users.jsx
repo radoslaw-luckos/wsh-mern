@@ -81,6 +81,7 @@ const Users = () => {
         if (response.ok) {
             setUsersData([...usersData, data]);
             setFormOpened(!FormOpened);
+            setIsLoading(true);
         }
 
     }
@@ -104,6 +105,7 @@ const Users = () => {
             console.log(response);
             const newUsersData = usersData.filter(user => user.email !== email);
             setUsersData(newUsersData);
+            setIsLoading(true);
         }
     }
 
@@ -135,7 +137,7 @@ const Users = () => {
         }
         getUsers();
         setIsLoading(false);
-    }, []);
+    }, [isLoading]);
 
     if (isLoading) {
         return (

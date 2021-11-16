@@ -71,22 +71,17 @@ const Ads = () => {
             },
         };
 
-        //Zapytanie do API - rejestracja użytkownika 
+        //API call - adding new ad
         const response = await fetch('http://localhost:5000/api/ads', requestOptions);
         if (response.ok) {
             setAdsData([...AdsData, data]);
+            setIsLoading(true);
             setFormOpened(!FormOpened);
         }
 
     }
 
     const deleteAd = async (id) => {
-
-        console.log(id);
-
-        const AdToDelete = AdsData.find(ad => ad.id === id)
-
-        console.log(AdToDelete);
 
         const requestOptions = {
             method: 'DELETE',
@@ -96,12 +91,13 @@ const Ads = () => {
                 'auth-token': user.token
             },
         };
-        const response = await fetch(`http://localhost:5000/api/ads/delete/${AdToDelete.id}`, requestOptions);
+        const response = await fetch(`http://localhost:5000/api/ads/delete/${id}`, requestOptions);
 
         if (response.ok) {
             console.log(response);
             const newAdsData = AdsData.filter(ad => ad._id !== id);
             setAdsData(newAdsData);
+            setIsLoading(true);
         }
     }
 
@@ -129,7 +125,7 @@ const Ads = () => {
         }
         getAds();
         setIsLoading(false);
-    }, []);
+    }, [isLoading]);
 
     if (isLoading) {
         return (

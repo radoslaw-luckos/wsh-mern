@@ -26,12 +26,12 @@
             top:100%;
             left: 0;
             width: 100vw;
-            min-height: calc(100vh - 12rem);
+            min-height: calc(100vh - 5rem);
             display: flex;
             flex-flow: column nowrap;
             align-items: center;
             justify-content:space-around;
-            background-color: rgba(0, 0, 0, 0.74);
+            background-color: rgba(0, 0, 0, 0.94);
             z-index: 10;
         }
     }
@@ -43,7 +43,7 @@
     &::after{
         content: '';
         height: 1px;
-        width: 100%;
+        width: 90%;
         position: absolute;
         bottom: 0;
         background-color: $font-menu;

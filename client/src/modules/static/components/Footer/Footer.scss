@@ -3,7 +3,7 @@
 .footer{
     width: 100%;
     height: 7rem;
-    background-color: $bg-primary;
+    background-color: rgba($bg-primary, .3);
     color: $font-primary;
     z-index: 1;
     display: grid;

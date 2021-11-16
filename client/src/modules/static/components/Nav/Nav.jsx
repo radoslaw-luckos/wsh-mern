@@ -18,28 +18,28 @@ const Nav = () => {
             {!MenuOpened ? <BiMenuAltLeft className='menu__icon' onClick={() => toggleMenu()} /> : <BiX className='menu__icon' onClick={() => toggleMenu()} />}
             <ul className='menu__list' id='menu'>
                 <li>
-                    <Link to='/'>
+                    <Link to='/' onClick={() => toggleMenu()}>
                         Aktualności
                     </Link>
                 </li>
 
                 <li>
-                    <Link to={`/o-nas`}>
+                    <Link to={`/o-nas`} onClick={() => toggleMenu()}>
                         O szczepie
                     </Link>
                 </li>
                 <li>
-                    <Link to={`/dla-rodzicow`}>
+                    <Link to={`/dla-rodzicow`} onClick={() => toggleMenu()}>
                         Dla rodziców
                     </Link>
                 </li>
                 <li>
-                    <Link to='/galeria'>
+                    <Link to='/galeria' onClick={() => toggleMenu()}>
                         Galeria
                     </Link>
                 </li>
                 <li>
-                    <Link to={`/kontakt`}>
+                    <Link to={`/kontakt`} onClick={() => toggleMenu()}>
                         Kontakt
                     </Link>
                 </li>

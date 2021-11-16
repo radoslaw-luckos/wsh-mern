@@ -74,6 +74,7 @@ const Stories = () => {
         if (response.ok) {
             setStoriesData([...StoriesData, data]);
             setFormOpened(!FormOpened);
+            setIsLoading(true);
         }
 
     }
@@ -94,6 +95,7 @@ const Stories = () => {
         if (response.ok) {
             const newStoriesData = StoriesData.filter(story => story._id !== id);
             setStoriesData(newStoriesData);
+            setIsLoading(true);
         }
     }
 
@@ -107,8 +109,8 @@ const Stories = () => {
     //on first page load gets data and saves it in component state
     useEffect(() => {
         const getStories = async () => {
-            const StoriesDataFromAPI = await fetchStories();
-            const StoriesList = StoriesDataFromAPI.map(story => {
+            const storiesDataFromAPI = await fetchStories();
+            const storiesList = storiesDataFromAPI.map(story => {
                 return {
                     id: story._id,
                     title: story.title,
@@ -116,11 +118,11 @@ const Stories = () => {
                     tag: story.tag,
                 }
             })
-            setStoriesData(StoriesList);
+            setStoriesData(storiesList);
         }
         getStories();
         setIsLoading(false);
-    }, []);
+    }, [isLoading]);
 
     if (isLoading) {
         return (

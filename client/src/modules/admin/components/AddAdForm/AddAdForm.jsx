@@ -21,7 +21,7 @@ const AddStoryForm = ({ addAd }) => {
             <form className='form' noValidate onSubmit={handleSubmit(addAd)}>
                 <Typography variant='h5' sx={{ m: 2, color: '#071f4b' }}>Dodaj ogłoszenie</Typography>
 
-                <TextField required label="Tytuł" fullWidth type='text' placeholder="Biwak ..." {...register("title", { required: true })} sx={{ m: 2 }} />
+                <TextField required label="Tytuł" fullWidth type='text' placeholder='Tu wpisz tytuł ogłoszenia, np. "Skałdka członkowska za II kwartał" ' {...register("title", { required: true })} sx={{ m: 2 }} />
                 <TextField required label="Termin" fullWidth type='date' {...register("deadline", { required: true })} sx={{ m: 2 }} />
                 <TextField required label="Treść ogłoszenia" fullWidth type='text' placeholder="Tu wpisz treść ogłoszenia" multiline rows={10} {...register("body", { required: true })} sx={{ m: 2 }} />
 
