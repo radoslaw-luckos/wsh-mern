@@ -1,0 +1,88 @@
+@import '../../../../assets/styles/colors';
+
+.info-section{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 20px 0;
+    .faq{
+        margin-bottom: 20px;
+        &__heading{
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;            
+            .icon{
+                margin-right: 10px;
+                color: $font-headers;
+                height: 20px;
+                width: auto;
+            }
+            h2{
+                font-size: 1.1rem;
+                text-align: center;
+                text-transform: lowercase;
+                color: $font-headers;
+            }
+        }
+        &__list{
+            background-color: rgba($bg-primary, .8);            
+            padding: 20px;
+            list-style-type: none;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    .docs{
+        width: 100%;
+        &__heading{
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;            
+            .icon{
+                margin-right: 10px;
+                color: $font-headers;
+                height: 20px;
+                width: auto;
+            }
+            h2{
+                font-size: 1.1rem;
+                text-align: center;
+                text-transform: lowercase;
+                color: $font-headers;
+            }
+        }
+        &__list{
+            width: 100%;
+            background-color: rgba($bg-primary, .8);            
+            padding: 20px;
+            list-style-type: none;
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: flex-start;
+            justify-content: flex-start;
+            .item{
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                margin: 10px;
+                .icon{
+                    margin-right: 10px;
+                    color: $font-primary;
+                    height: 30px;
+                    width: auto;
+                }
+                h3{
+                    color: $font-primary;
+                    font-weight: 300;
+                }
+            }
+            
+        }
+    }
+}

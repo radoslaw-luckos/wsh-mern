@@ -1,0 +1,33 @@
+@import '../../../../assets/styles/colors';
+
+.q-item{
+    &__question{
+        display:flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: 10px;
+        .icon{
+            height: 20px;
+            width: auto;
+            margin-right: 10px;
+            color: $font-primary;
+        }
+        h3{
+            color: $font-primary;
+            font-size: .8rem;
+            font-weight: 300;
+            font-style: italic;
+        }
+    }
+    &__answer{
+        border: 1px solid $font-primary;
+        padding: 10px;
+        text-align: justify;
+        color: $font-primary;
+        font-size: .7rem;
+        font-weight: 300;
+        letter-spacing: .7px;
+        margin-bottom: 10px;
+    }
+}
