@@ -6,11 +6,24 @@
     align-items: center;
     justify-content: space-between;
     &__title{
-        margin-top: 10px;
-        font-size: 1.5rem;
-        text-align: center;
-        text-transform: lowercase;
-        color: $font-headers;
+        height: 30px;
+        h2{
+            font-size: 1.5rem;
+            text-align: center;
+            text-transform: lowercase;
+            color: $font-headers;
+            margin: 10px;
+        }
+        .icon{
+            height: 100%;
+            width: auto;
+            path{
+                stroke: $font-headers;
+            }
+        }
+        margin-top: 10px;        
+        display: flex;
+        align-items: center;
     }
     
     &__list{

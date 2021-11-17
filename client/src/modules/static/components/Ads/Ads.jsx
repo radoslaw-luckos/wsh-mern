@@ -1,13 +1,15 @@
 import React from 'react';
-import './Ads.scss'
+import './Ads.scss';
+import { GrAnnounce } from 'react-icons/gr';
 
 const AdsComponent = ({ ads }) => {
 
-    console.log(ads);
-
     return (
         <div className='ads'>
-            <h2 className='ads__title'>Ogłoszenia</h2>
+            <div className='ads__title'>
+                <GrAnnounce className='icon' />
+                <h2>Ogłoszenia</h2>
+            </div>
             <ul className="ads__list">
                 {ads.ads.map(ad => (
                     <li className="card" key={ad.id}>

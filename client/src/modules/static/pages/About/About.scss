@@ -1,0 +1,45 @@
+@import '../../../../assets/styles/colors';
+
+.about{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content:center;
+    width: 90%;
+    &__heading{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+        
+        .icon{
+            margin-right: 10px;
+            color: $font-headers;
+            height: 20px;
+            width: auto;
+        }
+        h2{
+            font-size: 1.3rem;
+            text-align: center;
+            text-transform: lowercase;
+            color: $font-headers;
+        }
+    }
+    &__tribe{
+        p{
+            background-color: rgba($bg-primary, .8);
+            color: $font-primary;
+            font-weight: 200;
+            font-size: .9rem;
+            padding: 20px;
+            text-align: justify;
+            letter-spacing: .75px;
+        }
+    }
+    &__teams, &__leaders{
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content:center;
+    }
+}

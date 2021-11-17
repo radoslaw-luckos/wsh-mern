@@ -6,11 +6,22 @@
     align-items: center;
     justify-content: space-between;
     &__title{
-        margin-top: 10px;
-        font-size: 1.5rem;
-        text-align: center;
-        text-transform: lowercase;
-        color: $font-headers;
+        height: 30px;
+        h2{
+            font-size: 1.5rem;
+            text-align: center;
+            text-transform: lowercase;
+            color: $font-headers;
+            margin: 10px;
+        }
+        .icon{
+            height: 100%;
+            width: auto;
+            color: $font-headers;
+        }
+        margin-top: 10px;        
+        display: flex;
+        align-items: center;
     }
     &__tags{
         display: flex;
@@ -61,6 +72,7 @@
         justify-content: flex-start;
         margin-top: 10px;
         .card{
+            margin: 20px 0;
             width: 90%;
             background-color: $bg-primary;
             color: $font-primary;
@@ -83,8 +95,8 @@
             }
             &__desc{
                 text-align: justify;
+                margin-right: 10px;
                 font-size: .8rem;
-                padding: 10px;
                 font-weight: 300;
             }
             &__tag{
@@ -109,6 +121,7 @@
                 margin-bottom: 4px;
                 box-shadow: 0 0 2px $font-headers;
                 font-size: .72rem;
+                cursor: pointer;
             }
         }
     }

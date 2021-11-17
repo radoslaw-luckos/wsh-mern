@@ -1,0 +1,51 @@
+@import '../../../../assets/styles/colors';
+
+.leader{
+    margin: 20px 10px;
+    width: 250px;
+    height: 100px;
+    background-color: rgba($bg-primary, .9);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid $font-headers;
+    box-shadow: 0 0 8px $font-headers;
+    overflow: hidden;
+    &__image{
+        width: 50px;
+        height: auto;
+        object-position: center;
+        object-fit: cover;
+    }
+    &__info{        
+        width: 150px;
+        height: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        *{
+            width: 100%;
+            text-align: left;
+        }
+        .name{
+            font-weight: 600;
+            font-size: .9rem;
+            color: $font-headers;
+        }
+        .role{
+            font-weight: 400;
+            font-size: .9rem;
+            color: $font-menu;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        .contact{
+            font-weight: 300;
+            font-size: 0.7rem;
+            color: $font-primary;
+        }
+    }
+    
+}

@@ -1,0 +1,45 @@
+@import '../../../../assets/styles/colors';
+
+.team{
+    margin: 20px 10px;
+    width: 250px;
+    height: 250px;
+    background-color: rgba($bg-primary, .9);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $font-headers;
+    box-shadow: 0 0 8px $font-headers;
+    &__img{
+        width: 80%;
+        height: 80%;
+        object-position: center;
+        object-fit: cover;
+    }
+    &__info{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba($bg-primary, .9);
+        color: $font-headers;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0;
+        &:hover {
+            opacity: 1;
+        }
+        h5{
+            margin: 10px;
+            font-weight: 400;
+            font-style: italic;
+        }
+    }
+    
+}
