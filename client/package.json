@@ -8,12 +8,15 @@
     "@mui/material": "^5.0.6",
     "@mui/styles": "^5.0.2",
     "framer-motion": "^4.1.17",
+    "leaflet": "^1.7.1",
+    "macy": "^2.5.1",
     "moment": "^2.29.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.17.5",
     "react-icons": "^4.3.1",
+    "react-leaflet": "^3.2.2",
     "react-router": "^5.2.1",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
@@ -31,16 +34,9 @@
       "react-app/jest"
     ]
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ]
 }
