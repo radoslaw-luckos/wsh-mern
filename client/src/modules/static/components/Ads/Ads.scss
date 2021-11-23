@@ -42,8 +42,9 @@
             box-shadow: 0 0 8px $font-headers;
             display: flex;
             flex-flow: column nowrap;
-            justify-items: center;
+            justify-content: center;
             align-items: center;
+            margin-bottom: 16px;
             &__title{
                 grid-area: title;
                 color: $font-headers;

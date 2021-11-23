@@ -1,4 +1,126 @@
-.leaflet-container {
-    width: 500px;
-    height: 500px;
+@import '../../../../assets/styles/colors';
+.contact{
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  &-form{
+    &__header{
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      .icon{
+        font-size: 30px;
+        margin-right: 10px;
+        color: $font-headers
+      }
+      h2{
+        color: $font-headers
+      }
+    }
+    &__text{
+      color: $font-primary;
+      font-weight: 300;
+      text-align: justify;
+      font-size: .80rem;
+      padding: 10px;
+    }
+    &__form{
+      background-color: rgba($bg-primary, .9);
+      margin-top: 10px;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      justify-content: flex-start;
+      input, select, textarea{
+        background-color: transparent;
+        width: 90%;
+        padding: 10px;
+        margin: 10px;
+        color: $font-menu;
+        text-transform: lowercase;
+        font-size: .80rem;
+        font-weight: normal;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid $font-menu;
+      }
+      select{
+        color: rgba($font-menu, .4);
+        &:focus{
+          color: rgba($font-menu, 1);
+        }
+      }
+      textarea {
+        border: 1px solid $font-menu;
+      }
+      button{
+        padding: 10px;
+        border-radius: none;
+        border: none;
+        background-color: $bg-second;
+        color: $bg-primary;
+        margin-bottom: 10px;
+      }
+    }
   }
+  &-data{
+    width: 90%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    &__header{
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      .icon{
+        font-size: 30px;
+        margin-right: 10px;
+        color: $font-headers
+      }
+      h2{
+        color: $font-headers
+      }
+    }
+    &__group{
+      background-color: rgba($bg-primary, .9);
+      padding: 20px;
+      margin: 10px;
+      width: 100%;
+      .name{
+        font-size: .9rem;
+        color: $font-primary;
+        font-weight: normal;
+      }
+      .mail, .phone{
+        display: flex;
+        padding-top: 8px;
+        color: $font-primary;
+        font-weight: 300;
+        font-size: 0.8rem;
+        .icon{
+          margin-right: 10px;
+        }
+        p{
+          font-size: .8rem;
+        }
+      }
+    }
+  }
+  .leaflet-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    min-height: 300px;
+  }
+}
