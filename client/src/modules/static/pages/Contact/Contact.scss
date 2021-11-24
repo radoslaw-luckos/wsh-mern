@@ -30,6 +30,11 @@
       text-align: justify;
       font-size: .80rem;
       padding: 10px;
+      .link{
+        font-size: .80rem;
+        color: $font-menu;
+        text-decoration: underline;
+      }
     }
     &__form{
       background-color: rgba($bg-primary, .9);
@@ -53,8 +58,12 @@
       }
       select{
         color: rgba($font-menu, .4);
-        &:focus{
+        &:focus,{
           color: rgba($font-menu, 1);
+        }
+        option{
+          color: black;
+          font-family: 'Roboto', sans-serif;
         }
       }
       textarea {
@@ -67,6 +76,12 @@
         background-color: $bg-second;
         color: $bg-primary;
         margin-bottom: 10px;
+        transition: color .1s ease-in;
+        transition: background-color .9s ease-in;
+        &:hover{
+          background-color: darken($bg-second,75);
+          color: $bg-second;
+        }
       }
     }
   }
@@ -122,5 +137,6 @@
     margin-bottom: 20px;
     width: 100%;
     min-height: 300px;
+    z-index: 5;
   }
 }

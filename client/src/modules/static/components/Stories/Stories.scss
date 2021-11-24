@@ -35,6 +35,7 @@
             text-align: center;
             font-size: .80rem;
             position: relative;
+            cursor: pointer;
             &::after{
                 content:'';
                 position: absolute;
@@ -74,16 +75,15 @@
         .card{
             margin: 20px 0;
             width: 90%;
-            background-color: $bg-primary;
+            background-color: rgba($bg-primary, .9);
             color: $font-primary;
             border: 1px solid $font-headers;
             box-shadow: 0 0 8px $font-headers;
             display: grid;
-            grid-template-columns: 2fr 4fr;
-            grid-template-rows: 1fr 3fr 1fr;
+            grid-template-columns: 4fr 2fr;
             grid-template-areas: 
             "title title"
-            "icon desc"
+            "desc icon"
             "tag btn";
             justify-items: center;
             align-items: center;
@@ -91,16 +91,29 @@
                 grid-area: title;
                 color: $font-headers;
                 text-align: center;
-                margin-top: 5px;
+                margin: 16px 0;
             }
             &__desc{
-                text-align: justify;
-                margin-right: 10px;
+                grid-area: desc;
+                text-align: left;
+                margin-left: 16px;
                 font-size: .8rem;
                 font-weight: 300;
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+                margin-bottom: 16px;
+            }
+            &__icon{
+                grid-area: icon;
+                width: 80%;
+                height: auto;
             }
             &__tag{
+                justify-self: flex-start;
                 font-size: .7rem;
+                margin-left: 32px;
+                margin-bottom: 16px;
                 &--hs{
                     color: $pegaz;
                 }
@@ -113,12 +126,12 @@
             }
             &__btn{
                 justify-self:flex-end;
-                margin-right: 10px;
+                margin-right: 32px;
                 background-color: transparent;
                 border: 1px solid $font-headers;
                 color: $font-headers;
                 padding: 6px;
-                margin-bottom: 4px;
+                margin-bottom: 16px;
                 box-shadow: 0 0 2px $font-headers;
                 font-size: .72rem;
                 cursor: pointer;

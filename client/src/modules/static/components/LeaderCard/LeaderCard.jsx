@@ -9,8 +9,8 @@ const LeaderCard = ({ leader }) => {
             <div className='leader__info'>
                 <h4 className="name">{leader.name} {leader.surname}</h4>
                 <h5 className="role">{leader.role}</h5>
-                <p className="contact">{leader.email}</p>
-                <p className="contact">{leader.phone}</p>
+                <p className="contact-datapiece">{leader.email}</p>
+                <p className="contact-datapiece">{leader.phone}</p>
             </div>
         </div>
     )

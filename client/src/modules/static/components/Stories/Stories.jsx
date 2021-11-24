@@ -5,6 +5,8 @@ import { MdOutlineHistoryEdu } from 'react-icons/md';
 
 const StoriesComponent = ({ stories }) => {
 
+
+
     return (
         <div className='stories'>
             <div className='stories__title'>
@@ -21,12 +23,10 @@ const StoriesComponent = ({ stories }) => {
                 {stories.stories.map(story => (
                     <li className="card" key={story.id}>
                         <h3 className="card__title">{story.title}</h3>
-                        <img src={relIcon} alt='' className="card__icon"></img>
                         <p className="card__desc">{story.desc}</p>
-                        <p className="
-                        card__tag card__tag--h">{story.tag}</p>
-                        <button className="
-                        card__btn">Przeczytaj więcej</button>
+                        <img src={relIcon} alt='' className="card__icon"></img>
+                        {story.tag === 'HS' ? <p className="card__tag card__tag--hs">#harcerzestarsi</p> : (story.tag === 'H' ? <p className="card__tag card__tag--h">#harcerze</p> : <p className="card__tag card__tag--z">#zuchy</p>)}
+                        <button className="card__btn">Więcej</button>
                     </li>
                 ))}
 
