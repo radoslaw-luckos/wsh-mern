@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import './Contact.scss';
@@ -7,17 +7,55 @@ import { MdContactMail } from 'react-icons/md';
 import { FiPhoneCall } from 'react-icons/fi';
 import { RiContactsBookLine } from 'react-icons/ri';
 import { useForm } from 'react-hook-form';
+import ReCAPTCHA from "react-google-recaptcha";
 import './Contact.scss';
 
 const Contact = () => {
 
     const position = [51.0983292, 17.0921347];
 
+    const [verified, setVerified] = useState(false);
+
     const { register, handleSubmit, reset } = useForm();
 
-    const sendEmail = (data) => {
-        console.log(data);
-        reset();
+    const sendEmailData = async (data) => {
+
+        if (verified) {
+            console.log(data);
+            //sends data to the backend to send an email
+            const requestOptions = {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                    'Content-Type': 'application/json;charset=utf-8',
+                },
+            };
+
+            //API call 
+            try {
+                const response = await fetch('http://localhost:5000/api/email', requestOptions);
+                if (response.ok) {
+                    alert('Email send')
+                    reset();
+                }
+
+            } catch (error) {
+                alert(error)
+            }
+        }
+        else {
+            alert('Proszę dokonać weryfikacji ReCAPTCHA');
+        }
+
+
+    }
+
+    const recaptchaVerified = (response) => {
+        console.log(response);
+        if (response) {
+            setVerified(true)
+        }
     }
 
     return (
@@ -28,17 +66,21 @@ const Contact = () => {
                     <h2>Skontaktuj się z nami!</h2>
                 </header>
                 <p className="contact-form__text">Masz pytanie? Przeszukałeś nasze <Link className='link' to='/dla-rodzicow'>FAQ</Link> w poszukiwaniu odpowiedzi, ale nieznalazłeś tego czego szukałeś? Napisz do nas!</p>
-                <form className="contact-form__form" onSubmit={handleSubmit(sendEmail)}>
+                <form className="contact-form__form" onSubmit={handleSubmit(sendEmailData)}>
                     <input type="text" className="name" placeholder='Imię i nazwisko' {...register("sender", { required: true })} />
                     <input type="text" className="email" placeholder='adres email' {...register("email", { required: true })} />
                     <select type="text" className="topic" {...register("subject", { required: true })}>
                         <option value=''>Wybierz temat</option>
                         <option value="Zuchy">Zuchy</option>
                         <option value="Harcerze">Harcerze</option>
-                        <option value="Harcerze Starsi">Harcerze</option>
+                        <option value="Harcerze Starsi">Harcerze Starsi</option>
                         <option value="Finanse">Finanse</option>
                     </select>
                     <textarea name="" id="" cols="30" rows="10" className="message" placeholder='Tu wpisz swoją wiadomość' {...register("message", { required: true })}></textarea>
+                    <ReCAPTCHA
+                        sitekey='6LeEoVsdAAAAAEJAwuR1FyS16QeXJZcmcFHWyx8J'
+                        onChange={recaptchaVerified}
+                    />
                     <button type='submit'>Wyślij!</button>
                 </form>
             </section>

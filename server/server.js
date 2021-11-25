@@ -18,11 +18,13 @@ app.use(cors(corsOptions));
 import storiesRoutes from './routes/stories.js';
 import adsRoutes from './routes/ads.js';
 import usersRoutes from './routes/users.js';
+import emailRoutes from './routes/email.js';
 
 //routes middlewares
 app.use('/api/stories', storiesRoutes);
 app.use('/api/ads', adsRoutes);
 app.use('/api/users', usersRoutes);
+app.use('/api/email', emailRoutes);
 
 
 //mongoDB connection
