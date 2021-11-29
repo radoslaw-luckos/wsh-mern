@@ -3,6 +3,7 @@ import SliderComponent from '../../components/Slider/Slider';
 import StoriesComponent from '../../components/Stories/Stories';
 import AdsComponent from '../../components/Ads/Ads';
 import moment from 'moment';
+import './Home.scss';
 
 const Home = () => {
 
@@ -75,10 +76,13 @@ const Home = () => {
     }, []);
 
     return (
-        <section>
-            <SliderComponent />
-            <StoriesComponent stories={{ stories }} />
-            <AdsComponent ads={{ ads }} />
+        <section className='home'>
+            <SliderComponent className='home__slider' />
+            <div className='home__content'>
+                <StoriesComponent stories={{ stories }} className='stories' />
+                <AdsComponent ads={{ ads }} className='ads' />
+            </div>
+
         </section>
     )
 }

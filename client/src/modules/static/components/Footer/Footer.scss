@@ -34,3 +34,13 @@
         text-align: center;
     }
 }
+@media (min-width: 1025px){
+    .footer{
+        &__address{
+            font-size: .8rem;
+        }
+        &__copywrights{
+            font-size: .8rem;
+        } 
+    }
+}

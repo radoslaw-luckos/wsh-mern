@@ -68,3 +68,38 @@
     }
     
 }
+@media (min-width: 481px){
+    .ads{
+        &__list{
+            .card{
+                &__title{
+                    font-size: 1.3rem;
+                }
+                &__deadline{
+                    font-size: 1rem;
+                }
+                &__body{
+                    font-size: 0.9rem;
+                    padding: 12px;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 769px){
+    .ads{
+        justify-content: flex-start;
+        &__title{
+            margin-bottom: 75px;
+        }
+    }
+}
+@media (min-width: 1025px){
+    .ads{
+        &__title{
+            h2{
+                font-size: 2rem;
+            }
+        }
+    }
+}

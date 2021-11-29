@@ -50,7 +50,20 @@
     }
 }
 
-@media (min-width: 992px) {
+
+
+//rwd
+
+@media (min-width: 481px) {
+    .menu{
+        &__title{
+            font-size: 2rem;
+            text-align: left;
+        }
+    }
+}
+
+@media (min-width: 769px) {
     .menu{
         &__icon{
             display: none;
