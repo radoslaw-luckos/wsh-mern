@@ -18,7 +18,7 @@ const AddStoryForm = ({ addAd }) => {
             justifyContent: 'center',
 
         }} className='add-user-box'>
-            <form className='form' noValidate onSubmit={handleSubmit(addAd)}>
+            <form className='form' onSubmit={handleSubmit(addAd)}>
                 <Typography variant='h5' sx={{ m: 2, color: '#071f4b' }}>Dodaj ogłoszenie</Typography>
 
                 <TextField required label="Tytuł" fullWidth type='text' placeholder='Tu wpisz tytuł ogłoszenia, np. "Skałdka członkowska za II kwartał" ' {...register("title", { required: true })} sx={{ m: 2 }} />

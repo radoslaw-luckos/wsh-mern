@@ -35,11 +35,13 @@ const Stories = () => {
     //function fetches data from api and returns it
     const fetchStories = async () => {
 
+        const token = localStorage.getItem('auth_token');
+
         const requestOptions = {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8',
-                'auth-token': user.token
+                'auth-token': token
             },
         };
         const response = await fetch('http://localhost:5000/api/stories', requestOptions);
@@ -54,6 +56,7 @@ const Stories = () => {
 
     const addStory = async (data) => {
 
+        const token = localStorage.getItem('auth_token');
         const newStory = {
             title: data.title,
             desc: data.desc,
@@ -65,7 +68,7 @@ const Stories = () => {
             body: JSON.stringify(newStory),
             headers: {
                 'Content-Type': 'application/json;charset=utf-8',
-                'auth-token': user.token
+                'auth-token': token
             },
         };
 
@@ -81,13 +84,15 @@ const Stories = () => {
 
     const deleteStory = async (id) => {
 
+        const token = localStorage.getItem('auth_token');
+
         const StoryToDelete = StoriesData.find(story => story.id === id);
 
         const requestOptions = {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8',
-                'auth-token': user.token
+                'auth-token': token
             },
         };
         const response = await fetch(`http://localhost:5000/api/stories/delete/${StoryToDelete.id}`, requestOptions);

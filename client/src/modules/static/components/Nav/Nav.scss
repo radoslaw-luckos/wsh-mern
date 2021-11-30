@@ -34,6 +34,11 @@
             background-color: rgba(0, 0, 0, 0.94);
             z-index: 10;
         }
+        li a{
+            &__title:hover{
+                text-shadow: 10px 10px 10px $font-menu;
+            }
+        }
     }
     &__icon{
         min-width: 50px;

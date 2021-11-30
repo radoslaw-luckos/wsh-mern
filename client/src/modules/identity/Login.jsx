@@ -1,18 +1,20 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { UserContext } from '../../context/userContext';
 import { useHistory } from "react-router-dom";
 import { TextField, Button, Typography } from '@mui/material'
 import { Box } from '@mui/system';
 import './Login.scss';
+import jwt_decode from 'jwt-decode';
 
 const Login = () => {
 
     let history = useHistory();
 
-    const { setUser } = useContext(UserContext);
+    const { user, setUser } = useContext(UserContext);
 
     const { register, handleSubmit } = useForm();
+    const [errorMessage, setErrorMessage] = useState(null);
 
     const onSubmit = async (data) => {
 
@@ -30,20 +32,38 @@ const Login = () => {
         if (response.ok) {
             const parsedResponse = await response.json(); // w odpowiedzi dostajemy token użytkownika
             //Rozszyfrowanie tokena
-            // ??
+            console.log(parsedResponse);
+            const token = parsedResponse.token;
+            console.log(token);
+            //zapisanie tokenu w localStorage
+            localStorage.setItem('auth_token', token);
             //Ustawienie zalogowanego użytkownika w Context API
             setUser({
                 name: parsedResponse.username,
-                token: parsedResponse.token,
-                _id: parsedResponse.userId
+                id: parsedResponse.userId
             });
-            history.push('/admin')
+            history.push('/admin');
         }
         else {
-
+            const parsedResponse = await response.json();
+            setErrorMessage(parsedResponse)
         }
 
     };
+
+    useEffect(() => {
+        const token = localStorage.getItem('auth_token');
+        if (token) {
+            const decodedToken = jwt_decode(token);
+
+            const userFromToken = {
+                name: decodedToken.name,
+                id: decodedToken.id,
+            }
+            setUser(userFromToken);
+            console.log(user);
+        }
+    }, [])
 
     return (
         /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
@@ -64,6 +84,7 @@ const Login = () => {
                 <TextField fullWidth required id="outlined-required" label="Hasło" type='password' placeholder="*********" {...register("password", { required: true })} sx={{ m: 2 }} />
 
                 <Button variant='contained' type='submit'> Zaloguj się </Button>
+                {errorMessage && <p className='error'>{errorMessage}</p>}
             </form>
         </Box>
 

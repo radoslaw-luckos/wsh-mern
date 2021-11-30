@@ -38,11 +38,13 @@ const Users = () => {
     //function fetches data from api and returns it
     const fetchUsers = async () => {
 
+        const token = localStorage.getItem('auth_token');
+
         const requestOptions = {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8',
-                'auth-token': user.token
+                'auth-token': token
             },
         };
         const response = await fetch('http://localhost:5000/api/users', requestOptions);
@@ -56,6 +58,7 @@ const Users = () => {
     }
 
     const addUser = async (data) => {
+        const token = localStorage.getItem('auth_token');
 
         const newUser = {
             name: data.name,
@@ -72,7 +75,7 @@ const Users = () => {
             body: JSON.stringify(newUser),
             headers: {
                 'Content-Type': 'application/json;charset=utf-8',
-                'auth-token': user.token
+                'auth-token': token
             },
         };
 
@@ -86,24 +89,26 @@ const Users = () => {
 
     }
 
-    const deleteUser = async (email) => {
+    const deleteUser = async (row) => {
+
+        const token = localStorage.getItem('auth_token');
         //zabezpieczenie przed usunięciem aktywnego użytkownika
-        if (email === user.email) {
+        if (row.id === user.id) {
             return;
         }
-        const userToDelete = usersData.find(user => user.email === email)
+        const userToDelete = usersData.find(user => user.email === row.email)
         const requestOptions = {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8',
-                'auth-token': user.token
+                'auth-token': token
             },
         };
         const response = await fetch(`http://localhost:5000/api/users/delete/${userToDelete.id}`, requestOptions);
 
         if (response.ok) {
             console.log(response);
-            const newUsersData = usersData.filter(user => user.email !== email);
+            const newUsersData = usersData.filter(user => user.email !== row.email);
             setUsersData(newUsersData);
             setIsLoading(true);
         }
@@ -175,7 +180,7 @@ const Users = () => {
                                         );
                                     })}
                                     <TableCell>
-                                        <MdDeleteForever className={classes.icon} onClick={() => deleteUser(row.email)} />
+                                        <MdDeleteForever className={classes.icon} onClick={() => deleteUser(row)} />
                                     </TableCell>
                                 </TableRow>
                             ))}

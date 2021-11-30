@@ -85,7 +85,7 @@ export const loginUser = async (req, res) => {
 
     if (!validPassword) return res.status(400).json('Invalid password!');
 
-    const token = jwt.sign({ _id: userToCheck._id }, TOKEN_SECRET)
+    const token = jwt.sign({ _id: userToCheck._id, name: userToCheck.name }, TOKEN_SECRET)
     res.header('auth-token', token);
 
     const response = {

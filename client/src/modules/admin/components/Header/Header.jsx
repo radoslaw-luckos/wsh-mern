@@ -26,7 +26,7 @@ const Header = () => {
 
     const logOut = () => {
         setUser(null);
-        //obsługa JWT ...
+        localStorage.removeItem('auth_token')
         history.push('/login');
     }
 

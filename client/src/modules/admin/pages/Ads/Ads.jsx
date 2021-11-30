@@ -36,12 +36,13 @@ const Ads = () => {
 
     //function fetches data from api and returns it
     const fetchAds = async () => {
+        const token = localStorage.getItem('auth_token');
 
         const requestOptions = {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8',
-                'auth-token': user.token
+                'auth-token': token
             },
         };
         const response = await fetch('http://localhost:5000/api/ads', requestOptions);
@@ -56,6 +57,8 @@ const Ads = () => {
 
     const addAd = async (data) => {
 
+        const token = localStorage.getItem('auth_token');
+
         const newAd = {
             title: data.title,
             deadline: data.deadline,
@@ -67,7 +70,7 @@ const Ads = () => {
             body: JSON.stringify(newAd),
             headers: {
                 'Content-Type': 'application/json;charset=utf-8',
-                'auth-token': user.token
+                'auth-token': token
             },
         };
 
@@ -83,12 +86,14 @@ const Ads = () => {
 
     const deleteAd = async (id) => {
 
+        const token = localStorage.getItem('auth_token');
+
         const requestOptions = {
             method: 'DELETE',
             headers: {
                 'Access-Control-Allow-Origin': '*',
                 'Content-Type': 'application/json;charset=utf-8',
-                'auth-token': user.token
+                'auth-token': token
             },
         };
         const response = await fetch(`http://localhost:5000/api/ads/delete/${id}`, requestOptions);
