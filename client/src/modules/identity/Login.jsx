@@ -32,9 +32,7 @@ const Login = () => {
         if (response.ok) {
             const parsedResponse = await response.json(); // w odpowiedzi dostajemy token użytkownika
             //Rozszyfrowanie tokena
-            console.log(parsedResponse);
             const token = parsedResponse.token;
-            console.log(token);
             //zapisanie tokenu w localStorage
             localStorage.setItem('auth_token', token);
             //Ustawienie zalogowanego użytkownika w Context API
@@ -61,7 +59,6 @@ const Login = () => {
                 id: decodedToken.id,
             }
             setUser(userFromToken);
-            console.log(user);
         }
     }, [])
 

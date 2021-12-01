@@ -4,7 +4,7 @@ import Nav from './components/Nav/Nav';
 import Ads from './pages/Ads/Ads';
 import Stories from './pages/Stories/Stories';
 import Users from './pages/Users/Users';
-import Profile from './pages/Profile';
+import Profile from './pages/Profile/Profile';
 import {
     Switch,
     Route,

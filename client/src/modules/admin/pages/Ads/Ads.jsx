@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Ads.scss';
 import { TableContainer, Table, TableCell, TableHead, TableRow, TableBody, Paper, Button, } from '@mui/material';
 import { MdDeleteForever } from 'react-icons/md';
 import { makeStyles } from '@mui/styles';
 import AddAdForm from '../../components/AddAdForm/AddAdForm';
-import { UserContext } from '../../../../context/userContext';
 import moment from 'moment';
 
 const useStyles = makeStyles({
@@ -29,7 +28,6 @@ const Ads = () => {
         { id: 'body', label: 'Opis', maxWidth: 500 },
     ];
 
-    const { user } = useContext(UserContext);
     const [AdsData, setAdsData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 

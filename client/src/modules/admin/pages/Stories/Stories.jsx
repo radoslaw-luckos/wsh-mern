@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Stories.scss';
 import { TableContainer, Table, TableCell, TableHead, TableRow, TableBody, Paper, Button, } from '@mui/material';
 import { MdDeleteForever } from 'react-icons/md';
 import { makeStyles } from '@mui/styles';
 import AddStoryForm from '../../components/AddStoryForm/AddStoryForm';
-import { UserContext } from '../../../../context/userContext';
 
 const useStyles = makeStyles({
     icon: {
@@ -28,7 +27,6 @@ const Stories = () => {
         { id: 'desc', label: 'Opis', maxWidth: 500 },
     ];
 
-    const { user } = useContext(UserContext);
     const [StoriesData, setStoriesData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
