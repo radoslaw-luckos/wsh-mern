@@ -58,6 +58,8 @@ const Users = () => {
     }
 
     const addUser = async (data) => {
+
+        console.log(data);
         const token = localStorage.getItem('auth_token');
 
         const newUser = {
@@ -65,7 +67,7 @@ const Users = () => {
             lastname: data.lastname,
             email: data.email,
             password: 'start1234',
-            unit: '32 WDSH Pegaz',
+            unit: data.unit,
             functions: [data.functions],
             phone: data.phone
         }

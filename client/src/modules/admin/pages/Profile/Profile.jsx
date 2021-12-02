@@ -37,7 +37,6 @@ const Profile = () => {
     }
 
     const updateUser = async (data) => {
-        console.log(data);
 
         const token = localStorage.getItem('auth_token');
 

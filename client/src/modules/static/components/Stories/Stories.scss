@@ -36,7 +36,7 @@
             font-size: .80rem;
             position: relative;
             cursor: pointer;
-            &::after{
+            &.active::after{
                 content:'';
                 position: absolute;
                 bottom: -5px;
@@ -47,19 +47,19 @@
             }
             &:first-of-type{
                 color: $hefalumpy;
-                &::after{
+                &.active::after{
                     background-color: $hefalumpy;
                 }
             }
             &:nth-of-type(2){
                 color: $pegaz;
-                &::after{
+                &.active::after{
                     background-color: $pegaz;
                 }
             }
             &:nth-of-type(3){
                 color: $ekisana;
-                &::after{
+                &.active::after{
                     background-color: $ekisana;
                 }
             }
@@ -135,6 +135,10 @@
                 box-shadow: 0 0 2px $font-headers;
                 font-size: .72rem;
                 cursor: pointer;
+                a{
+                    color:inherit;
+                    text-decoration: none;
+                }
             }
         }
     }
@@ -172,6 +176,12 @@
 }
 @media (min-width: 1201px){
     .stories{
+        &__tags{
+            .tag{
+                font-size: 1rem;
+                font-weight: 700;
+            }
+        }
         &__list{
             .card{
                 width: 70%;

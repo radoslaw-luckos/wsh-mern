@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Typography, TextField, Button } from '@mui/material';
+import { Typography, TextField, Button, Select, MenuItem } from '@mui/material';
 import { useForm, Controller } from 'react-hook-form';
 import './UpdateUserForm.scss';
 
@@ -15,6 +15,7 @@ const UpdateUserForm = ({ userData, updateUser }) => {
             name: userData.name,
             lastname: userData.lastname,
             email: userData.email,
+            unit: userData.unit,
             phone: userData.phone,
             functions: userData.functions,
         }
@@ -51,6 +52,16 @@ const UpdateUserForm = ({ userData, updateUser }) => {
                 control={control}
                 rules={{ required: false, }}
                 render={({ field }) => <TextField fullWidth {...field} sx={{ m: 2 }} />}
+            />
+            <Controller
+                name="unit"
+                control={control}
+                rules={{ required: false, }}
+                render={({ field }) => <Select fullWidth {...field} sx={{ m: 2 }}>
+                    <MenuItem value={'HS'}>Harcerze Starsi</MenuItem>
+                    <MenuItem value={'H'}>Harcerze</MenuItem>
+                    <MenuItem value={'Z'}>Zuchy</MenuItem>
+                </Select>}
             />
             <Controller
                 name="functions"
