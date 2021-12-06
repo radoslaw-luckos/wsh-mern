@@ -43,3 +43,48 @@
         justify-content:center;
     }
 }
+@media (min-width: 769px){
+    .about{        
+        &__heading{
+            .icon{
+                height: 30px;
+            }
+            h2{
+                font-size: 2rem;
+            }
+        }
+        &__teams .cards{
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content:center;
+        }
+    }
+}
+
+@media (min-width: 1025px){
+    .about{
+        &__tribe p{
+            font-size: 1.3rem;
+        }
+        &__teams{
+            width: 100%;
+            .cards{
+                width: 100%;
+                justify-content: space-around;
+            }
+        }
+        &__leaders{
+            width: 100%;
+            .cards{
+                width: 100%;
+                justify-content: space-around;
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+                justify-content:space-around;
+            }
+        }
+    }
+    
+}

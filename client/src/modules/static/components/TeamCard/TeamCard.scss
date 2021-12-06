@@ -43,3 +43,18 @@
     }
     
 }
+@media (min-width: 1025px){
+    .team{
+        margin: 30px;
+        width: 350px;
+        height: 350px;
+        &__info{
+            h3{
+                font-size: 2rem;
+            }
+            h5{
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

@@ -31,3 +31,20 @@
         margin-bottom: 10px;
     }
 }
+@media (min-width: 769px){
+    .q-item{
+        &__question{
+            justify-content: flex-start;
+            cursor: pointer;
+            .icon{
+                height: 30px;
+            }
+            h3{
+                font-size: 1rem;
+            }
+        }
+        &__answer{
+            font-size: 1rem;
+        }
+    }
+}

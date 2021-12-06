@@ -51,3 +51,43 @@
     }
     
 }
+@media (min-width: 769px){
+    .leader{
+        margin: 20px 10px;
+        padding-top: 16px;
+        width: 400px;
+        height: 200px;
+        &__image{
+            width: 100px;
+            margin-right: 20px;
+            margin-left: 20px;
+        }
+        &__info{        
+            width: 300px;
+            height: auto;
+            .name{
+                font-size: 1.3rem;
+                color: $font-headers;
+            }
+            .role{
+                font-weight: 400;
+                font-size: 1.1rem;
+                margin-bottom: 20px;
+                margin-top: 10px;
+            }
+            .contact-datapiece{
+                font-size: 1rem;
+            }
+        }        
+    }
+}
+@media (min-width: 1025px){
+    .leader{
+        &__info{        
+            .contact-datapiece{
+                font-size: 1rem;
+                margin: 10px 0;
+            }
+        }        
+    }
+}

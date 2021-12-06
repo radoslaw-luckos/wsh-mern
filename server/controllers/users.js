@@ -95,9 +95,9 @@ export const loginUser = async (req, res) => {
     if (!userToCheck) return res.status(400).json('Email is not found!');
 
 
-    // const validPassword = await bcrypt.compare(req.body.password, userToCheck.password);
+    const validPassword = await bcrypt.compare(req.body.password, userToCheck.password);
 
-    // if (!validPassword) return res.status(400).json('Invalid password!');
+    if (!validPassword) return res.status(400).json('Invalid password!');
 
     const token = jwt.sign({ _id: userToCheck._id, name: userToCheck.name }, TOKEN_SECRET)
     res.header('auth-token', token);
