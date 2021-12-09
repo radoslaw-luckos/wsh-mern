@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import './Contact.scss';
 import { BiMailSend } from 'react-icons/bi';
 import { MdContactMail } from 'react-icons/md';
 import { FiPhoneCall } from 'react-icons/fi';
@@ -9,6 +8,7 @@ import { RiContactsBookLine } from 'react-icons/ri';
 import { useForm } from 'react-hook-form';
 import ReCAPTCHA from "react-google-recaptcha";
 import './Contact.scss';
+import { url } from '../../../../url'
 
 const Contact = () => {
 
@@ -34,7 +34,7 @@ const Contact = () => {
 
             //API call 
             try {
-                const response = await fetch('http://localhost:5000/api/email', requestOptions);
+                const response = await fetch(`${url}/api/email`, requestOptions);
                 if (response.ok) {
                     alert('Email send')
                     reset();
@@ -80,6 +80,7 @@ const Contact = () => {
                     <ReCAPTCHA
                         sitekey='6LeEoVsdAAAAAEJAwuR1FyS16QeXJZcmcFHWyx8J'
                         onChange={recaptchaVerified}
+                        className='recaptcha'
                     />
                     <button type='submit'>Wyślij!</button>
                 </form>
@@ -91,7 +92,8 @@ const Contact = () => {
                 />
                 <Marker position={position}>
                     <Popup>
-                        HOW Stanica
+                        <h5 style={{ fontSize: 12, marginBottom: 0 }}>HOW "Stanica"</h5>
+                        <p style={{ fontSize: 10, marginTop: 0 }}>ul.Kożuchowska 13<br></br>51-631, Wrocław</p>
                     </Popup>
                 </Marker>
             </MapContainer>

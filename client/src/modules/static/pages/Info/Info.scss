@@ -9,6 +9,17 @@
     margin: 20px 0;
     .faq{
         margin-bottom: 20px;
+        .text{
+            padding: 20px;
+            background-color: rgba($bg-primary, .8);        
+            padding-left: 50px;
+            color: $font-primary;    
+        }
+        .link{
+            font-size: .80rem;
+            color: $font-menu;
+            text-decoration: underline;
+          }
         &__heading{
             margin-bottom: 20px;
             display: flex;
@@ -67,6 +78,7 @@
             align-items: flex-start;
             justify-content: flex-start;
             .item{
+                min-width: 80%;
                 display: flex;
                 flex-flow: row nowrap;
                 align-items: center;
@@ -126,15 +138,18 @@
         justify-content: space-around;
         gap: 30px;
         .faq{
+            min-width: 60%;
+        }
+        .docs{
             position: relative;
-            &::after{
+            &::before{
                 content: '';
                 position: absolute;
                 height: 100%;
                 width: 1px;
                 background-color: $bg-second;               
                 top: 50%;
-                right: -15px;
+                left: -15px;
                 transform: translateY(-50%);
             }
         }

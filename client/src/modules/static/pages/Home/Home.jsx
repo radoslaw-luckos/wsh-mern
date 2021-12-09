@@ -4,6 +4,7 @@ import StoriesComponent from '../../components/Stories/Stories';
 import AdsComponent from '../../components/Ads/Ads';
 import moment from 'moment';
 import './Home.scss';
+import { url } from '../../../../url';
 
 const Home = () => {
 
@@ -18,7 +19,7 @@ const Home = () => {
                 'Content-Type': 'application/json;charset=utf-8'
             },
         };
-        const response = await fetch('http://localhost:5000/api/stories', requestOptions);
+        const response = await fetch(`${url}/api/stories`, requestOptions);
 
         if (response.ok) {
             const data = await response.json();
@@ -35,7 +36,7 @@ const Home = () => {
                 'Content-Type': 'application/json;charset=utf-8',
             },
         };
-        const response = await fetch('http://localhost:5000/api/ads', requestOptions);
+        const response = await fetch(`${url}/api/ads`, requestOptions);
 
         if (response.ok) {
             const data = await response.json();

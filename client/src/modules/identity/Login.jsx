@@ -6,6 +6,7 @@ import { TextField, Button, Typography } from '@mui/material'
 import { Box } from '@mui/system';
 import './Login.scss';
 import jwt_decode from 'jwt-decode';
+import { url } from '../../url';
 
 const Login = () => {
 
@@ -27,7 +28,7 @@ const Login = () => {
         };
 
         //Zapytanie do API - logowanie użytkownika 
-        const response = await fetch('http://localhost:5000/api/users/login', requestOptions);
+        const response = await fetch(`${url}/api/users/login`, requestOptions);
 
         if (response.ok) {
             const parsedResponse = await response.json(); // w odpowiedzi dostajemy token użytkownika

@@ -65,7 +65,10 @@
 @media (min-width: 1025px){
     .about{
         &__tribe p{
-            font-size: 1.3rem;
+            font-size: 1rem;
+            font-weight: 300;
+            text-align: justify;
+            line-height: 1.5rem;
         }
         &__teams{
             width: 100%;

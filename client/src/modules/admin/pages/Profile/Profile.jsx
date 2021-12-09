@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import jwt_decode from 'jwt-decode';
 import UpdateUserForm from '../../components/UpdateUserForm/UpdateUserForm';
+import { url } from '../../../../url'
 
 const Profile = () => {
 
@@ -26,7 +27,7 @@ const Profile = () => {
 
         const userId = decodedToken._id;
 
-        const response = await fetch(`http://localhost:5000/api/users/${userId}`, requestOptions);
+        const response = await fetch(`${url}/api/users/${userId}`, requestOptions);
 
         if (response.ok) {
             const data = await response.json();
@@ -52,7 +53,7 @@ const Profile = () => {
         const userId = decodedToken._id;
 
 
-        const response = await fetch(`http://localhost:5000/api/users/update/${userId}`, requestOptions);
+        const response = await fetch(`${url}/api/users/update/${userId}`, requestOptions);
         if (response.ok) {
             console.log(response);
         } else {

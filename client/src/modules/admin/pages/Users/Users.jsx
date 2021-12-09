@@ -5,6 +5,7 @@ import { MdDeleteForever } from 'react-icons/md';
 import { makeStyles } from '@mui/styles';
 import AddUserForm from '../../components/AddUserForm/AddUserForm';
 import { UserContext } from '../../../../context/userContext';
+import { url } from '../../../../url'
 
 const useStyles = makeStyles({
     icon: {
@@ -47,7 +48,7 @@ const Users = () => {
                 'auth-token': token
             },
         };
-        const response = await fetch('http://localhost:5000/api/users', requestOptions);
+        const response = await fetch(`${url}/api/users`, requestOptions);
 
         if (response.ok) {
             const data = await response.json();
@@ -82,7 +83,7 @@ const Users = () => {
         };
 
         //Zapytanie do API - rejestracja użytkownika 
-        const response = await fetch('http://localhost:5000/api/users/register', requestOptions);
+        const response = await fetch(`${url}/api/users/register`, requestOptions);
         if (response.ok) {
             setUsersData([...usersData, data]);
             setFormOpened(!FormOpened);
@@ -106,7 +107,7 @@ const Users = () => {
                 'auth-token': token
             },
         };
-        const response = await fetch(`http://localhost:5000/api/users/delete/${userToDelete.id}`, requestOptions);
+        const response = await fetch(`${url}/api/users/delete/${userToDelete.id}`, requestOptions);
 
         if (response.ok) {
             console.log(response);
