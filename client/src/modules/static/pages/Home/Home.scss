@@ -1,0 +1,26 @@
+@import '../../../../assets/styles/colors';
+@media (min-width: 769px){
+    .home{
+        &__content{
+            display: flex;
+            flex-flow: row-reverse nowrap;
+            .stories{
+                width: 50%;
+            }
+            .ads{
+                width: 50%;
+                position: relative;
+                &::after{
+                    content: '';
+                    position: absolute;
+                    height: 90%;
+                    width: 1px;
+                    background-color: $bg-second;               
+                    top: 50%;
+                    right: 0;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+}

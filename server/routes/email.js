@@ -1,9 +1,8 @@
 import express from 'express';
+import { sendEmail } from '../controllers/email.js';
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.send('This works!');
-});
+router.post('/', sendEmail);
 
 export default router;

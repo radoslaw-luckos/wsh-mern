@@ -1,0 +1,105 @@
+@import '../../../../assets/styles/colors';
+
+.ads{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+    &__title{
+        height: 30px;
+        margin-bottom: 10px;
+        h2{
+            font-size: 1.5rem;
+            text-align: center;
+            text-transform: lowercase;
+            color: $font-headers;
+            margin: 10px;
+        }
+        .icon{
+            height: 100%;
+            width: auto;
+            path{
+                stroke: $font-headers;
+            }
+        }
+        margin-top: 10px;        
+        display: flex;
+        align-items: center;
+    }
+    
+    &__list{
+        list-style-type: none;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        .card{
+            width: 90%;
+            background-color: $bg-primary;
+            color: $font-primary;
+            border: 1px solid $font-headers;
+            box-shadow: 0 0 8px $font-headers;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 16px;
+            &__title{
+                grid-area: title;
+                color: $font-headers;
+                text-align: center;
+                margin: 10px;
+            }
+            &__deadline{
+                text-align: justify;
+                font-size: .8rem;
+                padding: 5px;
+                font-weight: 600;
+            }
+            &__body{
+                text-align: justify;
+                font-size: .8rem;
+                padding: 10px;
+                font-weight: 300;
+            }
+        }
+    }
+    
+}
+@media (min-width: 481px){
+    .ads{
+        &__list{
+            .card{
+                &__title{
+                    font-size: 1.3rem;
+                }
+                &__deadline{
+                    font-size: 1rem;
+                }
+                &__body{
+                    font-size: 0.9rem;
+                    padding: 12px;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 769px){
+    .ads{
+        justify-content: flex-start;
+        &__title{
+            margin-bottom: 75px;
+        }
+    }
+}
+@media (min-width: 1025px){
+    .ads{
+        &__title{
+            h2{
+                font-size: 2rem;
+            }
+        }
+    }
+}

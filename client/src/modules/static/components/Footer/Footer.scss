@@ -1,0 +1,46 @@
+@import '../../../../assets/styles/colors';
+
+.footer{
+    width: 100%;
+    height: 7rem;
+    background-color: rgba($bg-primary, .3);
+    color: $font-primary;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "hufiec address zhp"
+    "copy copy copy";
+    align-items: center;
+    justify-items: center;
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
+    &__hufiec{
+        grid-area: hufiec;
+    }
+    &__logo{
+        grid-area: zhp;
+    }
+    &__address{
+        grid-area: address;
+        font-size: .6rem;
+        text-align: center;
+    }
+    &__copywrights{
+        grid-area: copy;
+        font-size: .6rem;
+        text-align: center;
+    }
+}
+@media (min-width: 1025px){
+    .footer{
+        &__address{
+            font-size: .8rem;
+        }
+        &__copywrights{
+            font-size: .8rem;
+        } 
+    }
+}

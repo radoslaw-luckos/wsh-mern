@@ -1,0 +1,22 @@
+@import '../../../../assets/styles/colors';
+
+
+.add-user-box{
+    overflow-y: scroll;
+    padding-top: 150px;
+    border-radius: 8px;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    .form{
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        padding: 32px;
+        border-radius: 8px;
+        width: 100%;
+        color: black;
+    }
+}
