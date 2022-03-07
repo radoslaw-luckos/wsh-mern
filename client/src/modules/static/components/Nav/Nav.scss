@@ -1,7 +1,7 @@
 @import '../../../../assets/styles/colors';
 
-.menu{
-    *{
+.menu {
+    * {
         color: $font-menu;
     }
     height: 5rem;
@@ -11,41 +11,51 @@
     align-items: center;
     justify-content: space-around;
     position: relative;
-    &__title{
-        span{
+    &__title {
+        span {
             display: block;
         }
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        &:hover {
+            color: $font-primary;
+            span {
+                color: $font-primary;
+            }
+        }
     }
-    &__list{
+    &__list {
         display: none;
         list-style-type: none;
         text-decoration: none;
-        &.active{
-            display:block;
+        &.active {
+            display: block;
             position: absolute;
-            top:100%;
+            top: 100%;
             left: 0;
             width: 100vw;
             min-height: calc(100vh - 5rem);
             display: flex;
             flex-flow: column nowrap;
             align-items: center;
-            justify-content:space-around;
+            justify-content: space-around;
             background-color: rgba(0, 0, 0, 0.94);
             z-index: 10;
         }
-        li a{
-            &__title:hover{
-                text-shadow: 10px 10px 10px $font-menu;
+        li a {
+            transition: all 0.2s ease-in-out;
+            &:hover {
+                text-decoration: underline;
+                color: $font-primary;
             }
         }
     }
-    &__icon{
+    &__icon {
         min-width: 50px;
         min-height: 50px;
         cursor: pointer;
     }
-    &::after{
+    &::after {
         content: '';
         height: 1px;
         width: 90%;
@@ -55,13 +65,11 @@
     }
 }
 
-
-
 //rwd
 
 @media (min-width: 481px) {
-    .menu{
-        &__title{
+    .menu {
+        &__title {
             font-size: 2rem;
             text-align: left;
         }
@@ -69,20 +77,20 @@
 }
 
 @media (min-width: 769px) {
-    .menu{
-        &__icon{
+    .menu {
+        &__icon {
             display: none;
         }
-        &__list{
+        &__list {
             display: flex;
             flex-flow: row nowrap;
             align-items: center;
             justify-content: space-between;
             margin-right: 5%;
             padding-right: 20px;
-            width: 70%
+            width: 70%;
         }
-        &__title{
+        &__title {
             width: 30%;
             text-align: left;
             margin-left: 5%;

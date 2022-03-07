@@ -50,7 +50,7 @@ const StoriesComponent = ({ stories }) => {
                         <p className="card__desc">{story.desc}</p>
                         <img src={relIcon} alt='' className="card__icon"></img>
                         {story.tag === 'HS' ? <p className="card__tag card__tag--hs">#harcerzestarsi</p> : (story.tag === 'H' ? <p className="card__tag card__tag--h">#harcerze</p> : <p className="card__tag card__tag--z">#zuchy</p>)}
-                        <button className="card__btn"><a href='https://www.facebook.com/' target='_blank'>Więcej</a></button>
+                        <button className="card__btn"><a href='https://www.facebook.com/' target='_blank' rel='noreferrer' >Więcej</a></button>
                     </li> : ''
                 ))}
             </ul>
