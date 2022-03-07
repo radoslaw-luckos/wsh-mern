@@ -1,43 +1,43 @@
 @import '../../../../assets/styles/colors';
 
-.stories{
+.stories {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: space-between;
-    &__title{
+    &__title {
         height: 30px;
-        h2{
+        h2 {
             font-size: 1.5rem;
             text-align: center;
             text-transform: lowercase;
             color: $font-headers;
             margin: 10px;
         }
-        .icon{
+        .icon {
             height: 100%;
             width: auto;
             color: $font-headers;
         }
-        margin-top: 10px;        
+        margin-top: 10px;
         display: flex;
         align-items: center;
     }
-    &__tags{
+    &__tags {
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
-        justify-content:space-around;
+        justify-content: space-around;
         width: 100%;
         margin-top: 20px;
         margin-bottom: 20px;
-        .tag{
+        .tag {
             text-align: center;
-            font-size: .80rem;
+            font-size: 0.8rem;
             position: relative;
             cursor: pointer;
-            &.active::after{
-                content:'';
+            &.active::after {
+                content: '';
                 position: absolute;
                 bottom: -5px;
                 left: 50%;
@@ -45,160 +45,166 @@
                 width: 80%;
                 height: 2px;
             }
-            &:first-of-type{
+            &:first-of-type {
                 color: $hefalumpy;
-                &.active::after{
+                &.active::after {
                     background-color: $hefalumpy;
                 }
             }
-            &:nth-of-type(2){
+            &:nth-of-type(2) {
                 color: $pegaz;
-                &.active::after{
+                &.active::after {
                     background-color: $pegaz;
                 }
             }
-            &:nth-of-type(3){
+            &:nth-of-type(3) {
                 color: $ekisana;
-                &.active::after{
+                &.active::after {
                     background-color: $ekisana;
                 }
             }
         }
     }
-    &__list{
+    &__list {
         list-style-type: none;
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
         justify-content: flex-start;
         margin-top: 10px;
-        .card{
+        .card {
             margin: 20px 0;
             width: 90%;
-            background-color: rgba($bg-primary, .9);
+            background-color: rgba($bg-primary, 0.9);
             color: $font-primary;
             border: 1px solid $font-headers;
             box-shadow: 0 0 8px $font-headers;
             display: grid;
             grid-template-columns: 4fr 2fr;
-            grid-template-areas: 
-            "title title"
-            "desc icon"
-            "tag btn";
+            grid-template-areas:
+                'title title'
+                'desc icon'
+                'more more';
             justify-items: center;
             align-items: center;
-            &__title{
+            &__title {
                 grid-area: title;
                 color: $font-headers;
                 text-align: center;
                 margin: 16px 0;
             }
-            &__desc{
+            &__desc {
                 grid-area: desc;
                 text-align: left;
                 margin-left: 16px;
-                font-size: .8rem;
+                font-size: 0.8rem;
                 font-weight: 300;
                 display: flex;
                 align-items: flex-start;
                 justify-content: flex-start;
                 margin-bottom: 16px;
             }
-            &__icon{
+            &__icon {
                 grid-area: icon;
-                width: 80%;
+                width: 50%;
                 height: auto;
             }
-            &__tag{
-                justify-self: flex-start;
-                font-size: .7rem;
-                margin-left: 32px;
+            &__more {
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                justify-content: flex-start;
+                width: 100%;
+                grid-area: more;
                 margin-bottom: 16px;
-                &--hs{
-                    color: $pegaz;
+                .tag {
+                    margin-left: 32px;
+                    justify-self: flex-start;
+                    font-size: 0.7rem;
+                    &--hs {
+                        color: $pegaz;
+                    }
+                    &--h {
+                        color: $ekisana;
+                    }
+                    &--z {
+                        color: $hefalumpy;
+                    }
                 }
-                &--h{
-                    color: $ekisana;
-                }
-                &--z{
-                    color: $hefalumpy;
-                }
-            }
-            &__btn{
-                justify-self:flex-end;
-                margin-right: 32px;
-                background-color: transparent;
-                border: 1px solid $font-headers;
-                color: $font-headers;
-                padding: 6px;
-                margin-bottom: 16px;
-                box-shadow: 0 0 2px $font-headers;
-                font-size: .72rem;
-                cursor: pointer;
-                a{
-                    color:inherit;
-                    text-decoration: none;
+                .btn {
+                    justify-self: flex-start;
+                    margin-left: 48px;
+                    background-color: transparent;
+                    border: 1px solid $font-headers;
+                    color: $font-headers;
+                    padding: 6px;
+                    box-shadow: 0 0 2px $font-headers;
+                    font-size: 0.72rem;
+                    cursor: pointer;
+                    a {
+                        color: inherit;
+                        text-decoration: none;
+                    }
                 }
             }
         }
     }
-    
 }
 @media (min-width: 481px) {
-    .stories{
-        &__tags{
+    .stories {
+        &__tags {
             width: 70%;
         }
-        &__list{
-            .card{
-                &__desc{
-                    font-size: .9rem;
-                }
-                &__btn{
+        &__list {
+            .card {
+                &__desc {
                     font-size: 0.9rem;
-                    padding: 12px;
                 }
-                &__tag{
-                    font-size: .9rem;
+                &__more {
+                    .btn {
+                        font-size: 0.9rem;
+                        padding: 12px;
+                    }
+                    .tag {
+                        font-size: 0.9rem;
+                    }
                 }
             }
         }
     }
 }
-@media (min-width: 1025px){
-    .stories{
-        &__title{
-            h2{
+@media (min-width: 1025px) {
+    .stories {
+        &__title {
+            h2 {
                 font-size: 2rem;
             }
         }
     }
 }
-@media (min-width: 1201px){
-    .stories{
-        &__tags{
-            .tag{
+@media (min-width: 1201px) {
+    .stories {
+        &__tags {
+            .tag {
                 font-size: 1rem;
                 font-weight: 700;
             }
         }
-        &__list{
-            .card{
-                width: 70%;
-                &__title{
+        &__list {
+            .card {
+                &__title {
                     font-size: 1.5rem;
                 }
-                &__desc{
+                &__desc {
                     font-size: 1.1rem;
                     padding-left: 32px;
                 }
-                &__btn{
+                &__btn {
                     font-size: 1rem;
                     padding: 12px;
                     margin-top: 10px;
                 }
-                &__tag{
-                    padding-left: 32px;
+                &__tag {
                     font-size: 1rem;
                 }
             }
