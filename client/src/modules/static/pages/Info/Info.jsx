@@ -44,6 +44,7 @@ const Info = () => {
                         </Link>
                     ))}
                 </ul>
+                <p className='text'>Nie znalazłeś tego czego szukasz? <Link className='link' to='/kontakt'><span>Napisz do nas!</span></Link>  </p>
             </article>
         </section>
     )

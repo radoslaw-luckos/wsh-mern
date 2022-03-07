@@ -1,34 +1,45 @@
 @import '../../../../assets/styles/colors';
 
-.info-section{
+.info-section {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
     width: 90%;
     margin: 20px 0;
-    .faq{
+    .faq {
         margin-bottom: 20px;
-        &__heading{
+        .text {
+            padding: 20px;
+            background-color: rgba($bg-primary, 0.8);
+            padding-left: 50px;
+            color: $font-primary;
+        }
+        .link {
+            font-size: 0.8rem;
+            color: $font-menu;
+            text-decoration: underline;
+        }
+        &__heading {
             margin-bottom: 20px;
             display: flex;
             align-items: center;
-            justify-content: center;            
-            .icon{
+            justify-content: center;
+            .icon {
                 margin-right: 10px;
                 color: $font-headers;
                 height: 20px;
                 width: auto;
             }
-            h2{
+            h2 {
                 font-size: 1.1rem;
                 text-align: center;
                 text-transform: lowercase;
                 color: $font-headers;
             }
         }
-        &__list{
-            background-color: rgba($bg-primary, .8);            
+        &__list {
+            background-color: rgba($bg-primary, 0.8);
             padding: 20px;
             list-style-type: none;
             display: flex;
@@ -37,104 +48,108 @@
             justify-content: center;
         }
     }
-    .docs{
+    .docs {
         width: 100%;
-        &__heading{
+        &__heading {
             margin-bottom: 20px;
             display: flex;
             align-items: center;
-            justify-content: center;            
-            .icon{
+            justify-content: center;
+            .icon {
                 margin-right: 10px;
                 color: $font-headers;
                 height: 20px;
                 width: auto;
             }
-            h2{
+            h2 {
                 font-size: 1.1rem;
                 text-align: center;
                 text-transform: lowercase;
                 color: $font-headers;
             }
         }
-        &__list{
+        &__list {
             width: 100%;
-            background-color: rgba($bg-primary, .8);            
+            background-color: rgba($bg-primary, 0.8);
             padding: 20px;
             list-style-type: none;
             display: flex;
             flex-flow: column nowrap;
             align-items: flex-start;
             justify-content: flex-start;
-            .item{
+            .item {
+                min-width: 80%;
                 display: flex;
                 flex-flow: row nowrap;
                 align-items: center;
                 margin: 10px;
-                .icon{
+                .icon {
                     margin-right: 10px;
                     color: $font-primary;
                     height: 30px;
                     width: auto;
                 }
-                h3{
+                h3 {
                     color: $font-primary;
                     font-weight: 300;
                 }
             }
-            
         }
     }
 }
-@media (min-width: 769px){
-    .info-section{
-        .faq__heading, .docs__heading{
-            .icon{
+@media (min-width: 769px) {
+    .info-section {
+        .faq__heading,
+        .docs__heading {
+            .icon {
                 height: 30px;
             }
-            h2{
+            h2 {
                 font-size: 1.5rem;
             }
         }
-        .faq{
+        .faq {
             width: 100%;
-            &__list{
+            &__list {
                 padding: 50px;
                 align-items: flex-start;
             }
         }
-        .docs{
-            &__list{
+        .docs {
+            &__list {
                 width: auto;
                 display: flex;
                 flex-flow: column nowrap;
                 align-items: center;
                 justify-content: center;
-                .item{
+                .item {
                     width: auto;
                 }
             }
-        }        
+        }
     }
 }
-@media (min-width: 1025px){
-    .info-section{
+@media (min-width: 1025px) {
+    .info-section {
         margin-top: 50px;
         display: flex;
         flex-flow: row nowrap;
         align-items: flex-start;
         justify-content: space-around;
         gap: 30px;
-        .faq{
+        .faq {
+            min-width: 60%;
+        }
+        .docs {
             position: relative;
-            &::after{
+            &::before {
                 content: '';
                 position: absolute;
                 height: 100%;
                 width: 1px;
-                background-color: $bg-second;               
+                background-color: $bg-second;
                 top: 50%;
-                right: -15px;
+                left: -15px;
                 transform: translateY(-50%);
             }
         }

@@ -80,6 +80,7 @@ const Contact = () => {
                     <ReCAPTCHA
                         sitekey='6LeEoVsdAAAAAEJAwuR1FyS16QeXJZcmcFHWyx8J'
                         onChange={recaptchaVerified}
+                        className='recaptcha'
                     />
                     <button type='submit'>Wyślij!</button>
                 </form>
@@ -91,7 +92,8 @@ const Contact = () => {
                 />
                 <Marker position={position}>
                     <Popup>
-                        HOW Stanica
+                        <h5 style={{ fontSize: 12, marginBottom: 0 }}>HOW "Stanica"</h5>
+                        <p style={{ fontSize: 10, marginTop: 0 }}>ul.Kożuchowska 13<br></br>51-631, Wrocław</p>
                     </Popup>
                 </Marker>
             </MapContainer>
