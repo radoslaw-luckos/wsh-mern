@@ -30,6 +30,7 @@ const Info = () => {
                         <Question question={q.question} answer={q.answer} />
                     ))}
                 </ul>
+                <p className='text'>Nie znalazłeś tego czego szukasz? <Link className='link' to='/kontakt'><span>Napisz do nas!</span></Link>  </p>
             </article>
             <article className="docs">
                 <div className="docs__heading">
@@ -44,7 +45,7 @@ const Info = () => {
                         </Link>
                     ))}
                 </ul>
-                <p className='text'>Nie znalazłeś tego czego szukasz? <Link className='link' to='/kontakt'><span>Napisz do nas!</span></Link>  </p>
+                
             </article>
         </section>
     )
