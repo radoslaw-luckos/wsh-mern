@@ -45,12 +45,17 @@ const StoriesComponent = ({ stories }) => {
             </div>
             <ul className="stories__list">
                 {stories.stories.map(story => (
-                    Filters[`${story.tag}`] ? <li className="card" key={story.id}>
+                    Filters[`${story.tag}`] ? 
+                    <li className="card" key={story.id}>
                         <h3 className="card__title">{story.title}</h3>
                         <p className="card__desc">{story.desc}</p>
                         <img src={relIcon} alt='' className="card__icon"></img>
-                        {story.tag === 'HS' ? <p className="card__tag card__tag--hs">#harcerzestarsi</p> : (story.tag === 'H' ? <p className="card__tag card__tag--h">#harcerze</p> : <p className="card__tag card__tag--z">#zuchy</p>)}
-                        <button className="card__btn"><a href='https://www.facebook.com/' target='_blank'>Więcej</a></button>
+                        <div className="card__more">
+                            <button className="btn">
+                                <a href='https://www.facebook.com/' target='_blank' rel='noreferrer' >Więcej</a>
+                            </button>
+                            {story.tag === 'HS' ? <p className="tag tag--hs">#harcerzestarsi</p> : (story.tag === 'H' ? <p className="tag tag--h">#harcerze</p> : <p className="tag tag--z">#zuchy</p>)}
+                        </div>                        
                     </li> : ''
                 ))}
             </ul>

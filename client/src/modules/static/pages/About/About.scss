@@ -1,93 +1,94 @@
 @import '../../../../assets/styles/colors';
 
-.about{
+.about {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
     width: 90%;
-    &__heading{
+    &__heading {
         display: flex;
         align-items: center;
         justify-content: center;
         margin: 10px;
-        
-        .icon{
+
+        .icon {
             margin-right: 10px;
             color: $font-headers;
             height: 20px;
             width: auto;
         }
-        h2{
+        h2 {
             font-size: 1.3rem;
             text-align: center;
             text-transform: lowercase;
             color: $font-headers;
         }
     }
-    &__tribe{
-        p{
-            background-color: rgba($bg-primary, .9);
+    &__tribe {
+        p {
+            background-color: rgba($bg-primary, 0.9);
             color: $font-primary;
             font-weight: 200;
-            font-size: .9rem;
+            font-size: 0.9rem;
             padding: 20px;
             text-align: justify;
-            letter-spacing: .75px;
+            letter-spacing: 0.75px;
         }
     }
-    &__teams, &__leaders{
+    &__teams,
+    &__leaders {
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
-        justify-content:center;
+        justify-content: center;
     }
 }
-@media (min-width: 769px){
-    .about{        
-        &__heading{
-            .icon{
+@media (min-width: 769px) {
+    .about {
+        &__heading {
+            .icon {
                 height: 30px;
             }
-            h2{
+            h2 {
                 font-size: 2rem;
             }
         }
-        &__teams .cards{
+        &__teams .cards {
             display: flex;
             flex-flow: row wrap;
             align-items: center;
-            justify-content:center;
+            justify-content: center;
         }
     }
 }
 
-@media (min-width: 1025px){
-    .about{
-        &__tribe p{
+
+@media (min-width: 1025px) {
+    .about {
+        &__tribe p {
             font-size: 1rem;
             font-weight: 300;
             text-align: justify;
             line-height: 1.5rem;
         }
-        &__teams{
+        &__teams {
             width: 100%;
-            .cards{
+            .cards {
                 width: 100%;
                 justify-content: space-around;
             }
         }
-        &__leaders{
+        &__leaders {
             width: 100%;
-            .cards{
+            .cards {
                 width: 100%;
                 justify-content: space-around;
                 display: flex;
                 flex-flow: row wrap;
                 align-items: center;
-                justify-content:space-around;
+                justify-content: space-around;
             }
         }
     }
-    
 }

@@ -80,8 +80,8 @@ const Home = () => {
         <section className='home'>
             <SliderComponent className='home__slider' />
             <div className='home__content'>
-                <StoriesComponent stories={{ stories }} className='stories' />
                 <AdsComponent ads={{ ads }} className='ads' />
+                <StoriesComponent stories={{ stories }} className='stories' />
             </div>
 
         </section>

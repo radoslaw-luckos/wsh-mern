@@ -12,7 +12,7 @@ const Login = () => {
 
     let history = useHistory();
 
-    const { user, setUser } = useContext(UserContext);
+    const { setUser } = useContext(UserContext);
 
     const { register, handleSubmit } = useForm();
     const [errorMessage, setErrorMessage] = useState(null);
@@ -61,6 +61,7 @@ const Login = () => {
             }
             setUser(userFromToken);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (

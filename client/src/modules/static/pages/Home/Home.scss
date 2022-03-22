@@ -1,24 +1,24 @@
 @import '../../../../assets/styles/colors';
-@media (min-width: 769px){
-    .home{
-        &__content{
+@media (min-width: 769px) {
+    .home {
+        &__content {
+            margin-top: 40px;
             display: flex;
-            flex-flow: row-reverse nowrap;
-            .stories{
+            flex-flow: row nowrap;
+            .stories {
                 width: 50%;
             }
-            .ads{
+            .ads {
                 width: 50%;
                 position: relative;
-                &::after{
+                &::after {
                     content: '';
                     position: absolute;
-                    height: 90%;
+                    height: 100%;
                     width: 1px;
-                    background-color: $bg-second;               
-                    top: 50%;
+                    background-color: $bg-second;
+                    top: 0;
                     right: 0;
-                    transform: translateY(-50%);
                 }
             }
         }

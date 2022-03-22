@@ -50,6 +50,7 @@ const Info = () => {
                         </Link>
                     ))}
                 </ul>
+                
             </article>
         </section>
     )
