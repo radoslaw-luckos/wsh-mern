@@ -4,6 +4,7 @@ import { TableContainer, Table, TableCell, TableHead, TableRow, TableBody, Paper
 import { MdDeleteForever } from 'react-icons/md';
 import { makeStyles } from '@mui/styles';
 import AddStoryForm from '../../components/AddStoryForm/AddStoryForm';
+import { url } from '../../../../url';
 
 const useStyles = makeStyles({
     icon: {
@@ -42,7 +43,7 @@ const Stories = () => {
                 'auth-token': token
             },
         };
-        const response = await fetch('http://localhost:5000/api/stories', requestOptions);
+        const response = await fetch(`${url}/api/stories`, requestOptions);
 
         if (response.ok) {
             const data = await response.json();
@@ -71,7 +72,7 @@ const Stories = () => {
         };
 
         //API call to register new user
-        const response = await fetch('http://localhost:5000/api/stories', requestOptions);
+        const response = await fetch(`${url}/api/stories`, requestOptions);
         if (response.ok) {
             setStoriesData([...StoriesData, data]);
             setFormOpened(!FormOpened);
@@ -93,7 +94,7 @@ const Stories = () => {
                 'auth-token': token
             },
         };
-        const response = await fetch(`http://localhost:5000/api/stories/delete/${StoryToDelete.id}`, requestOptions);
+        const response = await fetch(`${url}/api/stories/delete/${StoryToDelete.id}`, requestOptions);
 
         if (response.ok) {
             const newStoriesData = StoriesData.filter(story => story._id !== id);

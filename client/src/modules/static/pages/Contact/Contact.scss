@@ -180,6 +180,7 @@
 }
 @media (min-width: 1025px) {
   .contact {
+
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -225,6 +226,7 @@
       &__group {
         display: flex;
         align-items: flex-start;
+
         justify-content: center;
         flex-flow: column nowrap;
         height: 100px;
@@ -243,3 +245,4 @@
     }
   }
 }
+

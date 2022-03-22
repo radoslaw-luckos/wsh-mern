@@ -5,6 +5,7 @@ import { MdDeleteForever } from 'react-icons/md';
 import { makeStyles } from '@mui/styles';
 import AddAdForm from '../../components/AddAdForm/AddAdForm';
 import moment from 'moment';
+import { url } from '../../../../url';
 
 const useStyles = makeStyles({
     icon: {
@@ -43,7 +44,7 @@ const Ads = () => {
                 'auth-token': token
             },
         };
-        const response = await fetch('http://localhost:5000/api/ads', requestOptions);
+        const response = await fetch(`${url}/api/ads`, requestOptions);
 
         if (response.ok) {
             const data = await response.json();
@@ -73,7 +74,7 @@ const Ads = () => {
         };
 
         //API call - adding new ad
-        const response = await fetch('http://localhost:5000/api/ads', requestOptions);
+        const response = await fetch(`${url}/api/ads`, requestOptions);
         if (response.ok) {
             setAdsData([...AdsData, data]);
             setIsLoading(true);
@@ -94,7 +95,7 @@ const Ads = () => {
                 'auth-token': token
             },
         };
-        const response = await fetch(`http://localhost:5000/api/ads/delete/${id}`, requestOptions);
+        const response = await fetch(`${url}/api/ads/delete/${id}`, requestOptions);
 
         if (response.ok) {
             console.log(response);

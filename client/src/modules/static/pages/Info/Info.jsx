@@ -14,8 +14,13 @@ const Info = () => {
     ];
 
     const docs = [
+        { name: 'Zgada na przynależność do ZHP', url: '../../../../assets/docs/sprawnosci_harcerskie.pdf' },
+        { name: 'Zgoda na udział dziecka w wyjeździe', url: '../../../../assets/docs/sprawnosci_harcerskie.pdf' },
+        { name: 'Karta kwalifikacyjna na obóz/zimowisko', url: '../../../../assets/docs/sprawnosci_harcerskie.pdf' },
+        { name: 'Dokument RODO', url: '../../../../assets/docs/sprawnosci_harcerskie.pdf' },
         { name: 'Sprawności', url: '../../../../assets/docs/sprawnosci_harcerskie.pdf' },
-        { name: 'Sprawności', url: '../../../../assets/docs/sprawnosci_harcerskie.pdf' }
+        { name: 'Stopnie harcerskie', url: '../../../../assets/docs/sprawnosci_harcerskie.pdf' },
+        { name: 'Sprawności', url: '../../../../assets/docs/sprawnosci_harcerskie.pdf' },
     ];
 
     return (
