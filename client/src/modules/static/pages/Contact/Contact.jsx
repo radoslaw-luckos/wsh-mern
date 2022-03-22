@@ -125,10 +125,10 @@ const Contact = () => {
                     </div>
                 </div>
                 <div className="contact-data__group">
-                    <h3 className="name">pwd. Maciej Fankanowski - drużynowy harcerzy starszych</h3>
+                    <h3 className="name">pwd. Radosław Łuckoś - drużynowy harcerzy starszych</h3>
                     <div className="mail">
                         <MdContactMail className='icon' />
-                        <p>maciej.fankanowski@zhp.net.pl</p>
+                        <p>radoslaw.luckos@zhp.net.pl</p>
                     </div>
                     <div className="phone">
                         <FiPhoneCall className='icon' />
