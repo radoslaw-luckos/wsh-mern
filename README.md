@@ -12,6 +12,8 @@ Druga część pracy dotyczy już implementacji aplikacji. Znajdują się tam sz
 
 Pracę podsumowuje ostatni rozdział zawierający wnioski oraz perspektywy ewentualnego dalszego rozwoju aplikacji.
 
+Aplikacja dostępna online pod adresem: 32wsh.netlify.app 
+
 ## Autor
 Radosław Łuckoś
 
